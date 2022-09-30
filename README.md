@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+## TABLE OF CONTENTS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Function & Features
+- Demo/Visuals
+- Technologies Used
+- Future Opportunities for Enhancement
+- Maintainers
 
-## Available Scripts
+## FUNCTION & FEATURES
 
-In the project directory, you can run:
+TBD NAME OF PROJECT is an app for anyone who wants to create a one-stop shop organize their experiences. 
 
-### `npm start`
+Leveraging Google Map’s API, users can:
+- Login and create an account.
+- Save favorite places.
+- Save collections of places.
+- Indicate if they have visited a place or not.
+- View their progress in completing all of the experiences in a collection.
+- View collections of places created by other users.
+- (Future) Share collections with other users.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Frontend
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+This is the frontend of TBD NAME OF PROJECT. To checkout the backend, visit [this repo](https://github.com/RachelMullen/phase-3-sinatra-react-project-backend/).
 
-### `npm test`
+## DEMO/VISUALS
+COMING SOON!
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## TECHNOLOGIES USED
+This project was built using:
 
-### `npm run build`
+- React
+- Ruby
+- Sinatra
+- API: 
+## FUTURE OPPORTUNITIES FOR ENHANCEMENT
+COMING SOON!
+In the future, we would love to build in something that us to filter costs of experiences.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## MAINTAINERS##
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Luke Chamley: https://www.linkedin.com/in/luke-chamley/ 
+- Elliot Mangini: https://www.linkedin.com/in/elliotmangini/ 
+- Rachel Mullen: https://www.linkedin.com/in/racheljmullen/ 
+- Cassidy Wagner: https://www.linkedin.com/in/cassidywag/ 
