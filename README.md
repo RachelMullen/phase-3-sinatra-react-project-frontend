@@ -34,8 +34,10 @@ This project was built using:
 - Sinatra
 - API: 
 ## FUTURE OPPORTUNITIES FOR ENHANCEMENT
+
 COMING SOON!
-In the future, we would love to build in something that us to filter costs of experiences.
+
+In the future, we would love to build in something that allows users to filter costs of experiences.
 
 ## MAINTAINERS##
 
