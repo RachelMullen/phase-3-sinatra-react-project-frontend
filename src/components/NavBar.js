@@ -1,50 +1,37 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
-import home from "../assets/home.svg";
   
-export default function NavBar ()  {
+export default function NavBar()  {
   return (
     <React.Fragment>
-      <div>
+      <div >
         <NavLink
           to="/"
-          exact
-          style={linkStyles}
-          activeStyle={{
-            background: "#21005D",
-          }}
-          img src={home} 
-        >  Home
+        ><span class ="navBar">HOME</span>
         </NavLink>
+
         <NavLink
-          to="/profile"
-          exact
-          style={linkStyles}
-          activeStyle={{
-            background: "#21005D",
-          }}
+          to="/create"
         >
-          Profile
+        <span class ="navBar">CREATE</span>
         </NavLink>
+
         <NavLink
-          to="/cities"
-          exact
-          style={linkStyles}
-          activeStyle={{
-            background: "#21005D",
-          }}
+          to="/explore"
         >
-          My Cities
+        <span class ="navBar">EXPLORE</span>
         </NavLink>
+
         <NavLink
-          to="/about"
-          exact
-          style={linkStyles}
-          activeStyle={{
-            background: "#21005D",
-          }}
+          to="/go"
         >
-          About
+        <span class ="navBar">GO</span>
+        </NavLink>
+
+        <NavLink
+          to="/signin"
+        >
+        <span class ="navBar">SIGNIN</span>
         </NavLink>
       </div>
     </React.Fragment>
