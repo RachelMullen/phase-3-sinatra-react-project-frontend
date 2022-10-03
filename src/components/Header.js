@@ -10,8 +10,9 @@ export default function Header() {
                 <h1>TRACK YOUR FUN</h1>
                 <p><em>A list-based app to track your fun!</em></p>
         <div>
-            <br></br>
+            < br/>
             <NavBar/>
+            < br/>
         </div>
             </header>
         </div>

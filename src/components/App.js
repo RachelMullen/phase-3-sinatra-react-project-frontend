@@ -13,8 +13,7 @@ import "../index.css"
 
 export default function App() {
 
-  const [ users, setUsers ] = useState([]);
-  const [currentUser, setCurrentUser ] = useState('')
+  const [ users, setUsers ] = useState({});
 
   return (
   <div>
@@ -31,9 +30,7 @@ export default function App() {
         </Route>
         <Route exact path="/login">
             <Login
-              onAddUser={(newUser)=>setUsers([...users, newUser])}
-              onCurrentUser={(newUser)=>setCurrentUser(newUser)}
-              currentUser={currentUser}/>
+              users={setUsers}/>
         </Route>
         <Route exact path="/">
             <Home />

@@ -6,7 +6,7 @@ export default function Footer() {
     <React.Fragment>
         <div>
             <footer>
-                <h1>COPYRIGHT BABE CITY 2022</h1>
+                <p>COPYRIGHT BABE CITY 2022</p>
             </footer>
         </div>
     </React.Fragment>
