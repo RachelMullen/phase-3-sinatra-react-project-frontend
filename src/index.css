@@ -92,6 +92,7 @@ input[type="submit"]:hover {
 .input-container {
   display: flex;
   flex-direction: column;
+  color: black;
   gap: 8px;
   margin: 10px;
 }

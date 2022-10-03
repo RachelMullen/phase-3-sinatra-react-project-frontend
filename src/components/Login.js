@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 
 export default function Login() {
+  const [ user, setUser ] = useState("");
 
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-  
-    function handleSubmit(e) {
-      e.preventDefault();
+  function handleSubmit(e) {
+    e.preventDefault();
 
     fetch("http://localhost:3000/users", {
       method: "POST",
@@ -14,25 +12,36 @@ export default function Login() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        username:'',
-        password:'',
+        username: "",
+        password: "",
       }),
     })
       .then((r) => r.json())
-      .then((users) => {setUsers})
-      document.getElementById("login-form").reset();
-};
+      .then((users) => {
+        setUser(users);
+      });
+    document.getElementById("login-form").reset();
+  }
 
-const renderForm = (
+  const renderForm = (
     <div className="form">
       <form onSubmit={handleSubmit}>
         <div className="input-container">
           <label>Username </label>
-          <input type="text" value={username} onChange={(e) => setUsername(e.target.value)}/>
+          <input
+            type="text"
+            value={user[0]}
+            onChange={(e) => setUser([e.target.value,user[1]])}
+          />
         </div>
         <div className="input-container">
           <label>Password </label>
-          <input type="password" name="pass" value={password} onChange={(e) => setPassword(e.target.value)}/>
+          <input
+            type="password"
+            name="pass"
+            value={user[1]}
+            onChange={(e) => setUser([user[0],e.target.value])}
+          />
         </div>
         <div className="button-container">
           <input type="submit" />
@@ -41,14 +50,14 @@ const renderForm = (
     </div>
   );
 
-return (
+  return (
     <React.Fragment>
-        <div className="app">
-      <div className="login-form">
-        <div className="title">Sign In</div>
-        {renderForm}
+      <div className="app">
+        <div className="login-form">
+          <div className="title">Sign In</div>
+          {renderForm}
+        </div>
       </div>
-    </div>
     </React.Fragment>
   );
 }

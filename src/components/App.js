@@ -13,8 +13,6 @@ import "../index.css"
 
 export default function App() {
 
-  const [ users, setUsers ] = useState({});
-
   return (
   <div>
     <Header />
@@ -30,7 +28,7 @@ export default function App() {
         </Route>
         <Route exact path="/login">
             <Login
-              users={setUsers}/>
+              />
         </Route>
         <Route exact path="/">
             <Home />
