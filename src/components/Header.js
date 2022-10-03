@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBar from "./NavBar";
 
-export default function Header() {
+export default function Header({ user }) {
 
   return (
     <React.Fragment>
@@ -11,7 +11,7 @@ export default function Header() {
                 <p><em>A list-based app to track your fun!</em></p>
         <div>
             < br/>
-            <NavBar/>
+            <NavBar user={user}/>
             < br/>
         </div>
             </header>
