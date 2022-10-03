@@ -39,7 +39,7 @@ COMING SOON!
 
 In the future, we would love to build in something that allows users to filter costs of experiences.
 
-## MAINTAINERS##
+## MAINTAINERS
 
 - Luke Chamley: https://www.linkedin.com/in/luke-chamley/ 
 - Elliot Mangini: https://www.linkedin.com/in/elliotmangini/ 
