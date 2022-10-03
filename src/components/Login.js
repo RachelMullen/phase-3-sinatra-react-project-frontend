@@ -1,8 +1,7 @@
 import React,{ useState } from "react";
-import { Redirect } from 'react-router-dom';
 
-export default function Login({ user, setUser }) {
-  const [ userInput, setUserInput ] = useState([]);
+export default function Login({ setUser }) {
+  const [ userInput, setUserInput ] = useState(["",""]);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -12,7 +11,7 @@ export default function Login({ user, setUser }) {
     .then(resp => resp.json())
     .then(data => { 
       setUser(data);
-      setUserInput([]);
+      setUserInput(["",""]);
     });
   }
 
