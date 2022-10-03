@@ -12,6 +12,7 @@ import Footer from './Footer';
 import "../index.css"
 
 export default function App() {
+  const [ user , setUser ] = useState({});
 
   return (
   <div>
@@ -28,6 +29,8 @@ export default function App() {
         </Route>
         <Route exact path="/login">
             <Login
+            user={user}
+            setUser={setUser}
               />
         </Route>
         <Route exact path="/">

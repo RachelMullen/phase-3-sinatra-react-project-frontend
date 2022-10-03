@@ -1,26 +1,19 @@
-import React, { useState } from "react";
+import React,{ useState } from "react";
+import { Redirect } from 'react-router-dom';
 
-export default function Login() {
-  const [ user, setUser ] = useState("");
+export default function Login({ user, setUser }) {
+  const [ userInput, setUserInput ] = useState([]);
 
   function handleSubmit(e) {
     e.preventDefault();
+    console.log('click!')
 
-    fetch("http://localhost:3000/users", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        username: "",
-        password: "",
-      }),
-    })
-      .then((r) => r.json())
-      .then((users) => {
-        setUser(users);
-      });
-    document.getElementById("login-form").reset();
+    fetch(`http://localhost:9292/users/${userInput[0]}`)
+    .then(resp => resp.json())
+    .then(data => { 
+      setUser(data);
+      setUserInput([]);
+    });
   }
 
   const renderForm = (
@@ -30,8 +23,8 @@ export default function Login() {
           <label>Username </label>
           <input
             type="text"
-            value={user[0]}
-            onChange={(e) => setUser([e.target.value,user[1]])}
+            value={userInput[0]}
+            onChange={(e) => setUserInput([e.target.value,userInput[1]])}
           />
         </div>
         <div className="input-container">
@@ -39,8 +32,8 @@ export default function Login() {
           <input
             type="password"
             name="pass"
-            value={user[1]}
-            onChange={(e) => setUser([user[0],e.target.value])}
+            value={userInput[1]}
+            onChange={(e) => setUserInput([userInput[0],e.target.value])}
           />
         </div>
         <div className="button-container">
