@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from "react";
 import { Switch, Route } from "react-router-dom";
 
 import Header from "./Header";
@@ -6,12 +6,16 @@ import Create from "./Create";
 import Explore from "./Explore";
 import Go from "./Go";
 import Home from './Home';
-import Signin from './Signin';
+import Login from './Login';
 import Footer from './Footer';
 
 import "../index.css"
 
 export default function App() {
+
+  const [ users, setUsers ] = useState([]);
+  const [currentUser, setCurrentUser ] = useState('')
+
   return (
   <div>
     <Header />
@@ -25,8 +29,11 @@ export default function App() {
         <Route exact path="/go">
             <Go />
         </Route>
-        <Route exact path="/signin">
-            <Signin />
+        <Route exact path="/login">
+            <Login
+              onAddUser={(newUser)=>setUsers([...users, newUser])}
+              onCurrentUser={(newUser)=>setCurrentUser(newUser)}
+              currentUser={currentUser}/>
         </Route>
         <Route exact path="/">
             <Home />

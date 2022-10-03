@@ -29,9 +29,9 @@ export default function NavBar()  {
         </NavLink>
 
         <NavLink
-          to="/signin"
+          to="/login"
         >
-        <span class ="navBar">SIGNIN</span>
+        <span class ="navBar">LOGIN</span>
         </NavLink>
       </div>
     </React.Fragment>
