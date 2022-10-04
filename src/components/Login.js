@@ -1,19 +1,19 @@
-import React,{ useState } from "react";
-import { Redirect } from 'react-router-dom';
+import React, { useState } from "react";
+import { Redirect } from "react-router-dom";
 
 export default function Login({ user, setUser }) {
-  const [ userInput, setUserInput ] = useState(["",""]);
+  const [userInput, setUserInput] = useState(["", ""]);
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log('click!')
+    console.log("click!");
 
     fetch(`http://localhost:9292/users/${userInput[0]}`)
-    .then(resp => resp.json())
-    .then(data => { 
-      setUser(data);
-      setUserInput(["",""]); 
-    });
+      .then((resp) => resp.json())
+      .then((data) => {
+        setUser(data);
+        setUserInput(["", ""]);
+      });
   }
 
   const renderForm = (
@@ -24,7 +24,7 @@ export default function Login({ user, setUser }) {
           <input
             type="text"
             value={userInput[0]}
-            onChange={(e) => setUserInput([e.target.value,userInput[1]])}
+            onChange={(e) => setUserInput([e.target.value, userInput[1]])}
           />
         </div>
         <div className="input-container">
@@ -33,7 +33,7 @@ export default function Login({ user, setUser }) {
             type="password"
             name="pass"
             value={userInput[1]}
-            onChange={(e) => setUserInput([userInput[0],e.target.value])}
+            onChange={(e) => setUserInput([userInput[0], e.target.value])}
           />
         </div>
         <div className="button-container">
@@ -51,8 +51,7 @@ export default function Login({ user, setUser }) {
           {renderForm}
         </div>
       </div>
-      {user ? <Redirect to="/go"/> : null}
+      {user ? <Redirect to="/go" /> : null}
     </React.Fragment>
-    
   );
 }
