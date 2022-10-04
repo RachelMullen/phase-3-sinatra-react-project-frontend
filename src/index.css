@@ -23,7 +23,7 @@ a:hover {
 body {
   backdrop-filter: blur(20px);
   line-height: 1.4;
-  min-height: 100vh;
+  min-height: 150vh;
   background: linear-gradient(#6750a4, #e6dcdc);
   margin: 1rem;
   font-family: "Roboto", sans-serif;
@@ -124,4 +124,4 @@ input[type="submit"]:hover {
   /* CSS for really wide screens */
 
 
-  
+
