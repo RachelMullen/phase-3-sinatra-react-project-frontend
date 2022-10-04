@@ -85,11 +85,11 @@ export default function Home({ user, setUser }) {
           </strong> */}
         </p>
         <p>
-          <Button variant="contained" onClick={handleClickOpen}>
+          <Button variant="contained" onClick={user ? <Redirect to="/go" /> : null}>
             LOG IN
           </Button>
           <Dialog open={open} onClose={handleClose}>
-            <DialogTitle>SIGN IN</DialogTitle>
+            <DialogTitle>LOGIN IN</DialogTitle>
             <DialogContent>
               <DialogContentText>
                 Add the information below to create a new hunt.
