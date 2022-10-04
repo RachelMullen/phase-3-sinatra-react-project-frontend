@@ -1,16 +1,75 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "@mui/material/Button";
 import Grid2 from "@mui/material/Unstable_Grid2";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import PaperContent from "@mui/material/CardContent";
+import TextField from "@mui/material/TextField";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
 // import Checkbox from "@mui/material/Checkbox";
 import Container from "@mui/material/Container";
 import { Link } from "@mui/material";
 
 export default function Create() {
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <React.Fragment>
+      <div>
+        <Button variant="contained" onClick={handleClickOpen}>
+          CREATE A HUNT
+        </Button>
+        <Dialog open={open} onClose={handleClose}>
+          <DialogTitle>CREATE A HUNT</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              Add the information below to create a new hunt.
+            </DialogContentText>
+            <TextField
+              autoFocus
+              margin="dense"
+              id="name"
+              label=" Name"
+              type="text"
+              fullWidth
+              variant="standard"
+            />
+            <TextField
+              autoFocus
+              margin="dense"
+              id="name"
+              label=" Location"
+              type="text"
+              fullWidth
+              variant="standard"
+            />
+            <TextField
+              autoFocus
+              margin="dense"
+              id="name"
+              label=" Desription"
+              type="text"
+              fullWidth
+              variant="standard"
+            />
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleClose}>Create</Button>
+          </DialogActions>
+        </Dialog>
+      </div>
+
       <Container sx={{ flexGrow: 1 }}>
         <Grid2
           container
