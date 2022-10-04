@@ -53,3 +53,6 @@ export default function SignUp({ setUser }) {
     </React.Fragment>
   );
 }
+
+
+
