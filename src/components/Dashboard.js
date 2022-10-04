@@ -8,7 +8,7 @@ import PaperContent from "@mui/material/CardContent";
 import Container from "@mui/material/Container";
 import { Link } from "@mui/material";
 
-export default function Explore() {
+export default function Dashboard() {
   return (
     <React.Fragment>
       <Container sx={{ flexGrow: 1 }}>
@@ -34,14 +34,14 @@ export default function Explore() {
             >
               <PaperContent>
                 <Typography color="white" variant="h4">
-                  PLACES ON YOUR HUNT
+                  FAVORITES/WISHLIST/IN PROGRESS
                 </Typography>
               </PaperContent>
             </Paper>
           </Grid2>
           <Grid2 xs={12} sm={6}>
             <Typography color="white" variant="h4" textAlign="center">
-              HI USERNAME! HUNTS
+              HI USERNAME! THIS IS WHERE THE CURRENT HUNT IS
             </Typography>
             <Button variant="contained">EDIT/SAVE</Button>
           </Grid2>
@@ -61,7 +61,7 @@ export default function Explore() {
             >
               <PaperContent>
                 <Typography color="white" variant="h4" textAlign="Center">
-                  MAP{" "}
+                  THIS IS WHERE THE STATS GO
                 </Typography>
               </PaperContent>
             </Paper>

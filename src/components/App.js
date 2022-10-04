@@ -5,38 +5,37 @@ import Header from "./Header";
 import Create from "./Create";
 import Explore from "./Explore";
 import Go from "./Go";
-import Home from './Home';
-import Login from './Login';
-import Footer from './Footer';
+import Home from "./Home";
+import Login from "./Login";
+import Footer from "./Footer";
+import Dashboard from "./Dashboard";
 
-import "../index.css"
+import "../index.css";
 
 export default function App() {
-
-  const [ users, setUsers ] = useState({});
+  const [user, setUser] = useState();
 
   return (
-  <div>
-    <Header />
-    <Switch>
+    <div>
+      <Header user={user} />
+      <Switch>
         <Route exact path="/create">
-            <Create />
+          <Create />
         </Route>
         <Route exact path="/explore">
-            <Explore />
+          <Explore />
         </Route>
         <Route exact path="/go">
-            <Go />
+          <Go user={user} />
         </Route>
         <Route exact path="/login">
-            <Login
-              users={setUsers}/>
+          <Login user={user} setUser={setUser} />
         </Route>
         <Route exact path="/">
-            <Home />
+          <Home user={user} />
         </Route>
-      <Footer />   
-    </Switch>
-  </div>
+        <Footer />
+      </Switch>
+    </div>
   );
 }

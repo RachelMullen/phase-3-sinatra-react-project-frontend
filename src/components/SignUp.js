@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
 
-export default function Login({ user, setUser }) {
+export default function SignUp({ setUser }) {
   const [userInput, setUserInput] = useState(["", ""]);
 
   function handleSubmit(e) {
@@ -51,7 +50,6 @@ export default function Login({ user, setUser }) {
           {renderForm}
         </div>
       </div>
-      {user ? <Redirect to="/go" /> : null}
     </React.Fragment>
   );
 }
