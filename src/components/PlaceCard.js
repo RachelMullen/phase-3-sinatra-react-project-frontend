@@ -1,13 +1,11 @@
 import React from "react";
 
 
-export default function PlaceCard({ place }) {
-
-    console.log(place);
+export default function PlaceCard({ place, setCurrentPlace }) {
 
     return (
         <>
-            <p>{place[0].place.name}</p>
+            <p onClick={() => setCurrentPlace(place)}>{place[0].place.name}</p>
         </>
     )
 }
