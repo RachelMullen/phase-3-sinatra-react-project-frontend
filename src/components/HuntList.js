@@ -9,7 +9,9 @@ export default function HuntList({ list, setCurrentGame }) {
         if (list) {
             cards = list.map(hunt => {
                 return (
-                    <HuntCard hunt={hunt} setCurrentGame={setCurrentGame} key={uuid()} />
+                    <div id="hunt-selector-list">
+                        <HuntCard hunt={hunt} setCurrentGame={setCurrentGame} key={uuid()}/>
+                    </div>
                 )
             })
         }
