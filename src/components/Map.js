@@ -1,14 +1,12 @@
 import React, { useState } from 'react'
-​
 import {GoogleMap, InfoWindow, LoadScript, Marker} from '@react-google-maps/api';
-​
+
 export default function Map () {
-​
+
   
   // fetch (`https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+denver+colorado&key=AIzaSyBU05O2xt-HlE4y5SUo0tHnCB0WcUi6Rk4`)
   // .then( res => res.json )
   // .then( res => visits(setSelected))
-​
   // function visits(data) {
   //   data.map((visit) => ({
   //     key : visit.results.place_id,
@@ -25,9 +23,8 @@ export default function Map () {
   // function visits(data){
   //   return trip = [...data]
   // }
-​
   // const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-​
+
   const containerStyle = {
     height: '90vh',
     width: '60%',
@@ -51,13 +48,12 @@ export default function Map () {
     {lat: 40.0, lng: -103.0},
     {lat: 40.0, lng: -102.0},
     {lat: 40.0, lng: -101.0}]
-​
+
 console.log (trip[0])
-​
+
 // google.maps.event.addListener(map, "click", (event) => {
 //   addMarker(event.latLng, map);
 // });
-​
 // function addMarker(location: google.maps.LatLngLiteral, map: google.maps.Map) {
 //   // Add the marker at the clicked location, and add the next-available label
 //   // from the array of alphabetical characters.
@@ -67,9 +63,6 @@ console.log (trip[0])
 //     map: map,
 //   });
 // }
-​
-​
-​
   return (
     <div id="mapContainer">
       <LoadScript id ="map" googleMapsApiKey="AIzaSyBU05O2xt-HlE4y5SUo0tHnCB0WcUi6Rk4">
@@ -103,8 +96,6 @@ console.log (trip[0])
     </div>
   )
 }
-​
-​
 // {parks.map((marker)=> (
 //   <Marker
 //       id="marker"
@@ -119,4 +110,3 @@ console.log (trip[0])
 //       onClick={()=>{
 //           setSelected(marker);
 //       }}
-​

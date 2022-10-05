@@ -110,5 +110,7 @@ input[type="submit"]:hover {
 }
 
 
-
+#mapContainer {
+  width: 70%;
+}
 

@@ -13,7 +13,8 @@ import Dashboard from "./Dashboard";
 import "../index.css";
 
 export default function App() {
-  const [user, setUser] = useState();
+  const [user, setUser ] = useState();
+  const [ currentGame, setCurrentGame ] = useState();
 
   return (
     <div>
@@ -26,7 +27,7 @@ export default function App() {
           <Explore />
         </Route>
         <Route exact path="/go">
-          <Go user={user} />
+          <Go user={user} setCurrentGame={setCurrentGame} currentGame={currentGame} />
         </Route>
         <Route exact path="/login">
           <Login user={user} setUser={setUser} />
