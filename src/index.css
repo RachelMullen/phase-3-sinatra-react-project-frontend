@@ -2,26 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(12, 1, 12);
+}
 
 body {
-  min-height: 100vh;
-  background:  #f2f2f2;
+  backdrop-filter: blur(20px);
+  line-height: 1.4;
+  min-height: 150vh;
   margin: 1rem;
-  font-family:'Poppins',
-    sans-serif;
   text-align: center;
   align-content: center;
   align-items: center;
-  color: black;
-}
-
-/* Header Component */
-
-header h1 {
-  margin: 20px;
-  font-size: 50px;
-  font-weight: 1000;
 }
 
 h1 {
@@ -35,27 +38,32 @@ p {
   margin-left: 30%;
 
 }
- 
 
-
-
-.navBar {
-  padding: 15px;
+.navLink {
+  height: auto;
   text-decoration: none;
   background: #6600ff;
   color: white;
-  margin: 25px;
   box-shadow: 0 4px 8px rgb(10 22 70 / 15%);
-  /* border-radius: 20px; */
+  padding: 15px;
+  margin: 25px;
+  border-radius: 10px;
+}
+
+.navlink :hover {
+  color: green;
+}
+
+.navBar {
+  display: flex;
+  justify-content: center;
 }
 
 .app {
   display: flex;
   align-items: center;
   flex-direction: column;
-
 }
-
 
 input[type="text"],
 input[type="password"] {
@@ -73,7 +81,8 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background: #6cf0c2;
+  /* background: #080908; */
+  color: white;
 }
 
 .button-container {
@@ -81,14 +90,9 @@ input[type="submit"]:hover {
   justify-content: center;
 }
 
-
-
-
 .list-container {
   display: flex;
 }
-
-
 
 .error {
   color: red;
@@ -99,7 +103,6 @@ input[type="submit"]:hover {
   font-size: 45px;
   margin-bottom: 5px;
 }
-
 
 .input-container {
   display: flex;
@@ -113,4 +116,3 @@ input[type="submit"]:hover {
 #mapContainer {
   width: 70%;
 }
-
