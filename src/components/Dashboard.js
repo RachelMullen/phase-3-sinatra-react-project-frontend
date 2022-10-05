@@ -2,9 +2,11 @@ import React from "react";
 import { Button, Grid, Typography, Paper, Box, TextField, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from "@mui/material";
 
 
-export default function Dashboard() {
+export default function Dashboard({ user }) {
+
   return (
     <React.Fragment>
+<<<<<<< HEAD
         <Grid
           container
           spacing={5}
@@ -58,6 +60,10 @@ export default function Dashboard() {
       <Box>
         <Button variant="contained">PUBLISH & GO!</Button>
       </Box>
+=======
+      <h1>{user[0].username}</h1>
+      <h1>Score: {user[3].stats.score}{user[3].stats.score > 0 ? ", nice." : ", you fucking idiot."}</h1>
+>>>>>>> d82b0dc1f4a7fd2c0fd2ccb6c86c8a12d00c8b30
     </React.Fragment>
   );
 }
