@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 import Button from "@mui/material/Button";
 import Grid2 from "@mui/material/Unstable_Grid2";
@@ -12,14 +12,36 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import DialogActions from "@mui/material/DialogActions";
 import TextField from "@mui/material/TextField";
-import Squirtle from '../assets/squirtle.png';
-import Map from './Map';
-import PlaceList from './PlaceList';
-import HuntList from './HuntList';
-
+import Squirtle from "../assets/squirtle.png";
+import Map from "./Map";
+import PlaceList from "./PlaceList";
+import HuntList from "./HuntList";
 
 export default function Go({ user, currentGame, setCurrentGame }) {
-  const [ isLoggedOut, setisLoggedOut ] = useState(false)
+  const [isLoggedOut, setisLoggedOut] = useState(false);
+  const [pinArray, setPinArray] = useState([]);
+
+  useEffect(() => setPinArray(grabAllCoordinates()), [currentGame]);
+
+  function grabAllCoordinates() {
+    if (currentGame) {
+      console.log("attempting to parse list of places");
+      console.log(currentGame);
+      let staging = [];
+      let name = Object.keys(currentGame);
+      currentGame[name].map((place) => {
+        staging.push({
+          latitude: `${place[0].place.latitude}`,
+          longitude: `${place[0].place.longitude}`,
+          complete: `${place[1].linked_visit[0].complete}`,
+          favorite: `${place[1].linked_visit[0].favorite}`,
+          wishlist: `${place[1].linked_visit[0].wishlist}`,
+          avoid: `${place[1].linked_visit[0].avoid}`,
+        });
+      });
+      return staging;
+    }
+  }
 
   return (
     <>
@@ -32,19 +54,22 @@ export default function Go({ user, currentGame, setCurrentGame }) {
       </Dialog>
 
       {/* pop-up choose game */}
-      { user ? 
-      <Dialog open={!currentGame}>
-        <DialogTitle>Please Select A Hunt</DialogTitle>
-        <HuntList container={"go"} list={user[2]["in_progress"]} setCurrentGame={setCurrentGame}/>
-      </Dialog>
-      : null}
-
+      {user ? (
+        <Dialog open={!currentGame}>
+          <DialogTitle>Please Select A Hunt</DialogTitle>
+          <HuntList
+            container={"go"}
+            list={user[2]["in_progress"]}
+            setCurrentGame={setCurrentGame}
+          />
+        </Dialog>
+      ) : null}
 
       {/* {user ? (<p style={{ color: "black" }}>Current User is {user[0].username}</p>) : null} */}
       {/* {console.log("go huntlist:")}
       {console.log(user[2]["in_progress"])} */}
-      {currentGame ? <PlaceList user={user} list={currentGame}/> : null}
-      <Map list={currentGame}/>
+      {currentGame ? <PlaceList user={user} list={currentGame} /> : null}
+      {pinArray ? <Map pinArray={pinArray} /> : null}
 
       {isLoggedOut ? <Redirect to="/" /> : null}
     </>

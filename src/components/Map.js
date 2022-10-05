@@ -6,30 +6,7 @@ import {
   Marker,
 } from "@react-google-maps/api";
 
-export default function Map({ list }) {
-  const [pinArray, setPinArray] = useState([]);
-
-  useEffect(() => setPinArray(grabAllCoordinates()), [list]);
-
-  function grabAllCoordinates() {
-    if (list) {
-      console.log("attempting to parse list of places")
-      console.log(list)
-      let staging = [];
-      let name = Object.keys(list);
-      list[name].map((place) => {
-        staging.push({
-          latitude: `${place[0].place.latitude}`,
-          longitude: `${place[0].place.longitude}`,
-          complete: `${place[1].linked_visit[0].complete}`,
-          favorite: `${place[1].linked_visit[0].favorite}`,
-          wishlist: `${place[1].linked_visit[0].wishlist}`,
-          avoid: `${place[1].linked_visit[0].avoid}`,
-        });
-      });
-      return staging;
-    }
-  }
+export default function Map({ pinArray }) {
 
   // handles the view region
   const [center, setCenter] = useState({
@@ -66,7 +43,6 @@ export default function Map({ list }) {
 
   return (
     <div id="mapContainer">
-      {pinArray ?
       <LoadScript
         id="map"
         googleMapsApiKey="AIzaSyBU05O2xt-HlE4y5SUo0tHnCB0WcUi6Rk4"
@@ -92,7 +68,6 @@ export default function Map({ list }) {
           ))}
         </GoogleMap>
       </LoadScript>
-      : null}
     </div>
   );
 }
