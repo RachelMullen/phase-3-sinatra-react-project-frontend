@@ -1,66 +1,98 @@
-import React, { useState, useEffect } from 'react'
-import {GoogleMap, InfoWindow, LoadScript, Marker} from '@react-google-maps/api';
+import React, { useState, useEffect } from "react";
+import {
+  GoogleMap,
+  InfoWindow,
+  LoadScript,
+  Marker,
+} from "@react-google-maps/api";
 
-export default function Map ({ list }) {
-  const [ pinArray, setPinArray ] = useState([]);
+export default function Map({ list }) {
+  const [pinArray, setPinArray] = useState([]);
 
-  useEffect(() => setPinArray(grabAllCoordinates()),[list]);
+  useEffect(() => setPinArray(grabAllCoordinates()), [list]);
 
-  function grabAllCoordinates () {
+  function grabAllCoordinates() {
     if (list) {
-      // console.log(list)
+      console.log("attempting to parse list of places")
+      console.log(list)
       let staging = [];
-      let name = Object.keys(list)
-      list[name].map(place => {
-        staging.push({latitude: `${place[0].place.latitude}`,
-                    longitude: `${place[0].place.longitude}`,
-                    complete: `${place[1].linked_visit[0].complete}`,
-                    favorite: `${place[1].linked_visit[0].favorite}`,
-                    wishlist: `${place[1].linked_visit[0].wishlist}`,
-                    avoid: `${place[1].linked_visit[0].avoid}`}
-                  );
-      })
+      let name = Object.keys(list);
+      list[name].map((place) => {
+        staging.push({
+          latitude: `${place[0].place.latitude}`,
+          longitude: `${place[0].place.longitude}`,
+          complete: `${place[1].linked_visit[0].complete}`,
+          favorite: `${place[1].linked_visit[0].favorite}`,
+          wishlist: `${place[1].linked_visit[0].wishlist}`,
+          avoid: `${place[1].linked_visit[0].avoid}`,
+        });
+      });
       return staging;
     }
-}
+  }
 
+  // handles the view region
+  const [center, setCenter] = useState({
+    lat: 39.7392,
+    lng: -104.9902,
+  });
 
-// console.log(pinArray)
-// all the shit above this
+  // handles what icon appears
+  function determineIcon(visit) {
+    console.log(visit);
+    if (visit.avoid == true) {
+      return "http://maps.google.com/mapfiles/ms/icons/red-dot.png";
+    } else if (visit.favorite == true) {
+      return "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png";
+    } else if (visit.wishlist == true) {
+      return "http://maps.google.com/mapfiles/ms/icons/green-dot.png";
+    } else {
+      return "http://maps.google.com/mapfiles/ms/icons/green.png";
+    }
+  }
 
-
+  // console.log(pinArray)
 
   const containerStyle = {
-    height: '90vh',
-    width: '60%',
+    height: "90vh",
+    width: "60%",
     left: "275px",
   };
   const settings = {
-      disableDefaultUI: true,
-      zoomControls: true,
-  }
-  const center = {
-      lat: 39.7392,
-      lng: -104.9902,
-  }
+    disableDefaultUI: true,
+    zoomControls: true,
+  };
 
-  let trip=[{lat: 40.0, lng: -105.0},
-    {lat: 40.0, lng: -104.0},
-    {lat: 40.0, lng: -103.0},
-    {lat: 40.0, lng: -102.0},
-    {lat: 40.0, lng: -101.0}]
-    
+
   return (
     <div id="mapContainer">
-      <LoadScript id ="map" googleMapsApiKey="AIzaSyBU05O2xt-HlE4y5SUo0tHnCB0WcUi6Rk4">
+      {pinArray ?
+      <LoadScript
+        id="map"
+        googleMapsApiKey="AIzaSyBU05O2xt-HlE4y5SUo0tHnCB0WcUi6Rk4"
+        mapId="d7d3b3829ba8148c"
+      >
         <GoogleMap
+          // onClick={recenter}
           mapContainerStyle={containerStyle}
           zoom={13.5} //gotta come up with a formula for a dynamic zoom that adjusts every time a pin is placed
           center={center}
           options={settings}
         >
+          {pinArray.map((visit) => (
+            <Marker
+              id="marker"
+              key={visit.id}
+              position={{
+                lat: parseFloat(visit.latitude),
+                lng: parseFloat(visit.longitude),
+              }}
+              icon={determineIcon(visit)}
+            />
+          ))}
         </GoogleMap>
       </LoadScript>
+      : null}
     </div>
-  )
+  );
 }
