@@ -8,70 +8,12 @@ import PaperContent from "@mui/material/CardContent";
 import Container from "@mui/material/Container";
 import { Link } from "@mui/material";
 
-export default function Dashboard() {
+export default function Dashboard({ user }) {
+
   return (
     <React.Fragment>
-      <Container sx={{ flexGrow: 1 }}>
-        <Grid2
-          container
-          spacing={{ xs: 3, md: 4 }}
-          columns={{ xs: 6, sm: 10, md: 14 }}
-        >
-          <Grid2 xs>
-            <Paper
-              elevation={3}
-              sx={{
-                textAlign: "left",
-                padding: "5px",
-                width: 300,
-                height: 300,
-                backgroundColor: "secondary.dark",
-                "&:hover": {
-                  backgroundColor: "secondary.main",
-                  opacity: [0.9, 0.8, 0.7],
-                },
-              }}
-            >
-              <PaperContent>
-                <Typography color="white" variant="h4">
-                  FAVORITES/WISHLIST/IN PROGRESS
-                </Typography>
-              </PaperContent>
-            </Paper>
-          </Grid2>
-          <Grid2 xs={12} sm={6}>
-            <Typography color="white" variant="h4" textAlign="center">
-              HI USERNAME! THIS IS WHERE THE CURRENT HUNT IS
-            </Typography>
-            <Button variant="contained">EDIT/SAVE</Button>
-          </Grid2>
-          <Grid2 xs>
-            <Paper
-              elevation={3}
-              sx={{
-                width: 300,
-                height: 300,
-                padding: "5px",
-                backgroundColor: "secondary.dark",
-                "&:hover": {
-                  backgroundColor: "secondary.main",
-                  opacity: [0.9, 0.8, 0.7],
-                },
-              }}
-            >
-              <PaperContent>
-                <Typography color="white" variant="h4" textAlign="Center">
-                  THIS IS WHERE THE STATS GO
-                </Typography>
-              </PaperContent>
-            </Paper>
-          </Grid2>
-        </Grid2>
-      </Container>
-      <div>
-        <br />
-        <Button variant="contained">PUBLISH & GO!</Button>
-      </div>
+      <h1>{user[0].username}</h1>
+      <h1>Score: {user[3].stats.score}{user[3].stats.score > 0 ? ", nice." : ", you fucking idiot."}</h1>
     </React.Fragment>
   );
 }

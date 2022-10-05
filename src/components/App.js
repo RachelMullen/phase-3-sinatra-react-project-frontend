@@ -45,6 +45,9 @@ export default function App() {
         <Route exact path="/">
           <Home user={user} setUser={setUser} />
         </Route>
+        <Route exact path="/dashboard">
+          <Dashboard user={user}/>
+        </Route>
       </Switch>
       <Footer />
     </div>
