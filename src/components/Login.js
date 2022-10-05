@@ -50,7 +50,7 @@ export default function Login({ user, setUser }) {
           {renderForm}
         </div>
       </div>
-      {user != [{},{},{},{}] ? <Redirect to="/go" /> : null}
+      {user ? <Redirect to="/go" /> : null}
     </React.Fragment>
   );
 }

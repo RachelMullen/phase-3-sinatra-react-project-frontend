@@ -28,7 +28,7 @@ export default function Go({ user, currentGame, setCurrentGame }) {
   return (
     <>
       {/* redirect sign in */}
-      <Dialog open={user != [{},{},{},{}]} onClose={() => setisLoggedOut(true)}>
+      <Dialog open={!user} onClose={() => setisLoggedOut(true)}>
         <DialogTitle>Please Log In Or Make An Account</DialogTitle>
         <DialogContent>
           <img src={Squirtle}></img>
@@ -37,15 +37,16 @@ export default function Go({ user, currentGame, setCurrentGame }) {
 
       {/* pop-up choose game */}
       { user ? 
-      <Dialog open={!currentGame && user == [{},{},{},{}]}>
+      <Dialog open={!currentGame}>
         <DialogTitle>Please Select A Hunt</DialogTitle>
         <HuntList list={user[2]["in_progress"]} setCurrentGame={setCurrentGame}/>
       </Dialog>
       : null}
 
-      {user ? (<p style={{ color: "black" }}>Current User is {user[0].username}</p>) : null}
-      <PlaceList user={user} list={currentGame}/>
-      <Map currentGame={currentGame}/>
+
+      {/* {user ? (<p style={{ color: "black" }}>Current User is {user[0].username}</p>) : null} */}
+      {currentGame ? <PlaceList user={user} list={currentGame}/> : null}
+      <Map list={currentGame}/>
 
       {isLoggedOut ? <Redirect to="/" /> : null}
     </>

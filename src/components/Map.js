@@ -1,9 +1,22 @@
 import React, { useState } from 'react'
 import {GoogleMap, InfoWindow, LoadScript, Marker} from '@react-google-maps/api';
 
-export default function Map ({ currentGame }) {
+export default function Map ({ list }) {
+  let coords = [];
 
-  console.log(currentGame)
+  function grabAllCoordinates () {
+    if (list) {
+      console.log(list)
+      let name = Object.keys(list)
+        list[name].map(place => {
+          coords.push([place[0].place.latitude, place[0].place.longitude, place[1].linked_visit[0].complete]);
+        })
+    }
+}
+
+grabAllCoordinates();
+
+console.log(coords)
 
   const containerStyle = {
     height: '90vh',

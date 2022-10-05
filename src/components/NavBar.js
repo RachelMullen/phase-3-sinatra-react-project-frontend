@@ -23,10 +23,26 @@ export default function NavBar({ user }) {
             GO
         </NavLink>
 
-        <NavLink to="/login" className='navLink'>
-            <Input sx={{ verticalAlign: "middle", paddingBottom: "3px" }} />
-            {user ? "DASHBOARD" : "LOG IN"}
+        <NavLink to="/explore">
+        <span className="navBar">EXPLORE</span>
         </NavLink>
+        
+        {/* <img className="main-logo" width="55px" src={Squirtle}></img> */}
+
+        <NavLink to="/go">
+        <span className ="navBar">GO</span>
+        </NavLink>
+
+        { !user ?
+        <NavLink to="/login">
+        <span className ="navBar">LOG IN</span>
+        </NavLink>
+        : null}
+        { user ?
+        <NavLink to="/dashboard">
+        <span className ="navBar">DASHBOARD</span>
+        </NavLink>
+        : null}
       </div>
     </React.Fragment>
   );
