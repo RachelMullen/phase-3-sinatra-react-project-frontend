@@ -14,7 +14,7 @@ export default function NavBar({ user }) {
         </NavLink>
 
         <NavLink to="/explore" button className='navLink'>
-        <Explore sx={{ verticalAlign: "middle", paddingBottom: "3px"}} />
+        <Explore sx={{ verticalAlign: "middle", paddingBottom: "3px" }} />
           EXPLORE
         </NavLink>
 
