@@ -12,7 +12,7 @@ export default function Go({ user }) {
   return (
     <React.Fragment>
       {user ? (
-        <p style={{ color: "black" }}>Current User is {user.username}</p>
+        <p style={{ color: "black" }}>Current User is {user[0].username}</p>
       ) : null}
       <Container sx={{ flexGrow: 1 }}>
         <Grid2

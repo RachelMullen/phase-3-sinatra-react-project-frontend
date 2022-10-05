@@ -6,9 +6,8 @@ export default function Login({ user, setUser }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log("click!");
 
-    fetch(`http://localhost:9292/users/${userInput[0]}`)
+    fetch(`http://localhost:9292/users/${userInput[0]}/${userInput[1]}`)
       .then((resp) => resp.json())
       .then((data) => {
         setUser(data);

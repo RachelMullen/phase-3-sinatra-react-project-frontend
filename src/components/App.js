@@ -32,7 +32,7 @@ export default function App() {
           <Login user={user} setUser={setUser} />
         </Route>
         <Route exact path="/">
-          <Home user={user} />
+          <Home setUser={setUser} />
         </Route>
         <Footer />
       </Switch>
