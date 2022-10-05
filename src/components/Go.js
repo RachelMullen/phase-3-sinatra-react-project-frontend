@@ -33,7 +33,7 @@ export default function Go({ user, currentGame, setCurrentGame }) {
       </Dialog>
 
       {/* redirect sign in */}
-      <Dialog open={!currentGame && user} onClose={() => setIsRedirect(true)}>
+      <Dialog open={!currentGame} onClose={() => setIsRedirect(true)}>
         <DialogTitle>Please Select A Hunt</DialogTitle>
         <HuntList list={user[2]["in_progress"]} setCurrentGame={setCurrentGame}/>
       </Dialog>

@@ -35,8 +35,8 @@ export default function App() {
         <Route exact path="/">
           <Home user={user} setUser={setUser} />
         </Route>
-        <Footer />
       </Switch>
+      <Footer />
     </div>
   );
 }
