@@ -14,7 +14,8 @@ import Dashboard from "./Dashboard";
 import "../index.css";
 
 export default function App() {
-  const [user, setUser] = useState();
+  const [user, setUser ] = useState();
+  const [ currentGame, setCurrentGame ] = useState();
 
   return (
     <React.Fragment>
@@ -32,13 +33,13 @@ export default function App() {
           <Explore />
         </Route>
         <Route exact path="/go">
-          <Go user={user} />
+          <Go user={user} setCurrentGame={setCurrentGame} currentGame={currentGame} />
         </Route>
         <Route exact path="/login">
           <Login user={user} setUser={setUser} />
         </Route>
         <Route exact path="/">
-          <Home user={user} />
+          <Home user={user} setUser={setUser} />
         </Route>
         <Footer />
       </Switch>
