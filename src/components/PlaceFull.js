@@ -16,8 +16,8 @@ export default function PlaceFull({ place }) {
 
     return (
         <>
-            <h2 style={{ fontSize: "2rem"}}>THIS IS THE SELECTED PLACE</h2>
-            <p>{place[0].place.name}</p>
+            <h2 style={{ fontSize: "2rem"}}>{place[0].place.name}</h2>
+            <button style={{ color: "green"}}>VISIT BUTTON</button>
             <p>description (coming soon): {place[0].place.description}</p>
             <p>latitude: {place[0].place.latitude}</p>
             <p>longitude: {place[0].place.latitude}</p>
