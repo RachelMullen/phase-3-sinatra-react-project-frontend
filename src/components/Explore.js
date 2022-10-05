@@ -24,10 +24,8 @@ export default function Explore() {
 
   return (
     <React.Fragment>
-
-
+      <HuntList container={"explore"} list={publicHunts}/>
       <Map />
-      <HuntList list={publicHunts}/>
 
 
 

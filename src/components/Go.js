@@ -35,14 +35,14 @@ export default function Go({ user, currentGame, setCurrentGame }) {
       { user ? 
       <Dialog open={!currentGame}>
         <DialogTitle>Please Select A Hunt</DialogTitle>
-        <HuntList list={user[2]["in_progress"]} setCurrentGame={setCurrentGame}/>
+        <HuntList container={"go"} list={user[2]["in_progress"]} setCurrentGame={setCurrentGame}/>
       </Dialog>
       : null}
 
 
       {/* {user ? (<p style={{ color: "black" }}>Current User is {user[0].username}</p>) : null} */}
-      {console.log("go huntlist:")}
-      {console.log(user[2]["in_progress"])}
+      {/* {console.log("go huntlist:")}
+      {console.log(user[2]["in_progress"])} */}
       {currentGame ? <PlaceList user={user} list={currentGame}/> : null}
       <Map list={currentGame}/>
 

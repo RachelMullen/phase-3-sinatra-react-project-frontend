@@ -2,7 +2,7 @@ import React from "react";
 import HuntCard from "./HuntCard";
 import { v4 as uuid } from "uuid";
 
-export default function HuntList({ list, setCurrentGame }) {
+export default function HuntList({ list, setCurrentGame, container }) {
     let cards = [];
 
     function generateList () {
@@ -10,7 +10,7 @@ export default function HuntList({ list, setCurrentGame }) {
             cards = list.map(hunt => {
                 return (
                     <div id="hunt-selector-list" key={uuid()}>
-                        <HuntCard hunt={hunt} setCurrentGame={setCurrentGame}/>
+                        <HuntCard container={container} hunt={hunt} setCurrentGame={setCurrentGame}/>
                     </div>
                 )
             })
