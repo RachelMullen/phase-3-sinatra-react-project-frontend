@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Switch, Route } from "react-router-dom";
+import { Container, AppBar } from "@mui/material";
 
 import Header from "./Header";
 import Create from "./Create";
@@ -16,8 +17,13 @@ export default function App() {
   const [user, setUser] = useState();
 
   return (
-    <div>
+    <React.Fragment>
       <Header user={user} />
+      <Container
+      sx={{
+        flexGrow: 1,
+        marginY: 5,
+      }}>
       <Switch>
         <Route exact path="/create">
           <Create />
@@ -36,6 +42,7 @@ export default function App() {
         </Route>
         <Footer />
       </Switch>
-    </div>
+      </Container>
+      </React.Fragment>
   );
 }

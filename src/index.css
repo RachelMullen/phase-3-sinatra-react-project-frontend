@@ -3,6 +3,7 @@
 * {
   box-sizing: border-box;
   margin: 0;
+  font-family: "Roboto", sans-serif;
   padding: 0;
 }
 
@@ -24,13 +25,10 @@ body {
   backdrop-filter: blur(20px);
   line-height: 1.4;
   min-height: 150vh;
-  background: linear-gradient(#6750a4, #e6dcdc);
   margin: 1rem;
-  font-family: "Roboto", sans-serif;
   text-align: center;
   align-content: center;
   align-items: center;
-  color: white;
 }
 
 /* Header Component */
@@ -66,14 +64,14 @@ input[type="submit"] {
   margin-top: 10px;
   cursor: pointer;
   font-size: 15px;
-  background: #01d28e;
-  border: 1px solid #01d28e;
+  /* background: #21005d; */
   color: rgb(0, 0, 0);
   padding: 10px 20px;
 }
 
 input[type="submit"]:hover {
-  background: #6cf0c2;
+  /* background: #080908; */
+  color: white;
 }
 
 .button-container {
@@ -82,10 +80,11 @@ input[type="submit"]:hover {
 }
 
 .login-form {
-  background-color: rgb(155, 40, 40);
+  background: #21005d;
   padding: 2rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   min-width: 25vh;
+  color: white;
 }
 
 .list-container {
@@ -104,14 +103,15 @@ input[type="submit"]:hover {
 .title {
   font-size: 25px;
   margin-bottom: 20px;
+  color: white;
 }
 
 .input-container {
   display: flex;
   flex-direction: column;
-  color: black;
   gap: 8px;
   margin: 10px;
+  color: white;
 }
 /* 
 @media (min-width: 480px) {
@@ -124,4 +124,4 @@ input[type="submit"]:hover {
   /* CSS for really wide screens */
 
 
-
+/* elevation: set to 3*/

@@ -1,23 +1,15 @@
 import React from "react";
-import Button from "@mui/material/Button";
-import Grid2 from "@mui/material/Unstable_Grid2";
-import Typography from "@mui/material/Typography";
-import Paper from "@mui/material/Paper";
-import PaperContent from "@mui/material/CardContent";
-// import Checkbox from "@mui/material/Checkbox";
-import Container from "@mui/material/Container";
-import { Link } from "@mui/material";
+import { Button, Grid, Typography, Paper, Box, TextField, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from "@mui/material";
+
 
 export default function Dashboard() {
   return (
     <React.Fragment>
-      <Container sx={{ flexGrow: 1 }}>
-        <Grid2
+        <Grid
           container
-          spacing={{ xs: 3, md: 4 }}
-          columns={{ xs: 6, sm: 10, md: 14 }}
+          spacing={5}
         >
-          <Grid2 xs>
+          <Grid item xs>
             <Paper
               elevation={3}
               sx={{
@@ -32,20 +24,18 @@ export default function Dashboard() {
                 },
               }}
             >
-              <PaperContent>
                 <Typography color="white" variant="h4">
                   FAVORITES/WISHLIST/IN PROGRESS
                 </Typography>
-              </PaperContent>
             </Paper>
-          </Grid2>
-          <Grid2 xs={12} sm={6}>
+          </Grid>
+          <Grid item xs={12} sm={6}>
             <Typography color="white" variant="h4" textAlign="center">
               HI USERNAME! THIS IS WHERE THE CURRENT HUNT IS
             </Typography>
             <Button variant="contained">EDIT/SAVE</Button>
-          </Grid2>
-          <Grid2 xs>
+          </Grid>
+          <Grid item xs>
             <Paper
               elevation={3}
               sx={{
@@ -59,19 +49,15 @@ export default function Dashboard() {
                 },
               }}
             >
-              <PaperContent>
                 <Typography color="white" variant="h4" textAlign="Center">
                   THIS IS WHERE THE STATS GO
                 </Typography>
-              </PaperContent>
             </Paper>
-          </Grid2>
-        </Grid2>
-      </Container>
-      <div>
-        <br />
+          </Grid>
+        </Grid>
+      <Box>
         <Button variant="contained">PUBLISH & GO!</Button>
-      </div>
+      </Box>
     </React.Fragment>
   );
 }

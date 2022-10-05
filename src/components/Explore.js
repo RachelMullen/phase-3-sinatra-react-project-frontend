@@ -1,23 +1,15 @@
 import React from "react";
-import Button from "@mui/material/Button";
-import Grid2 from "@mui/material/Unstable_Grid2";
-import Typography from "@mui/material/Typography";
-import Paper from "@mui/material/Paper";
-import PaperContent from "@mui/material/CardContent";
-// import Checkbox from "@mui/material/Checkbox";
-import Container from "@mui/material/Container";
-import { Link } from "@mui/material";
+import { Button, Grid, Typography, Paper, Box, TextField, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from "@mui/material";
+
 
 export default function Explore() {
   return (
     <React.Fragment>
-      <Container sx={{ flexGrow: 1 }}>
-        <Grid2
+        <Grid
           container
-          spacing={{ xs: 3, md: 4 }}
-          columns={{ xs: 6, sm: 10, md: 14 }}
+          spacing={3}
         >
-          <Grid2 xs>
+          <Grid item>
             <Paper
               elevation={3}
               sx={{
@@ -32,46 +24,27 @@ export default function Explore() {
                 },
               }}
             >
-              <PaperContent>
                 <Typography color="white" variant="h4">
                   PLACES ON YOUR HUNT
                 </Typography>
-              </PaperContent>
             </Paper>
-          </Grid2>
-          <Grid2 xs={12} sm={6}>
-            <Typography color="white" variant="h4" textAlign="center">
+          </Grid>
+          <Grid item>
+            <Typography color="black" variant="h4" textAlign="center">
               HI USERNAME! HUNTS
             </Typography>
             <Button variant="contained">EDIT/SAVE</Button>
-          </Grid2>
-          <Grid2 xs>
-            <Paper
-              elevation={3}
-              sx={{
-                width: 300,
-                height: 300,
-                padding: "5px",
-                backgroundColor: "secondary.dark",
-                "&:hover": {
-                  backgroundColor: "secondary.main",
-                  opacity: [0.9, 0.8, 0.7],
-                },
-              }}
-            >
-              <PaperContent>
-                <Typography color="white" variant="h4" textAlign="Center">
-                  MAP{" "}
-                </Typography>
-              </PaperContent>
-            </Paper>
-          </Grid2>
-        </Grid2>
-      </Container>
-      <div>
+          </Grid>
+           <Grid item>
+            <img
+              src='https://media.wired.com/photos/59269cd37034dc5f91bec0f1/191:100/w_1280,c_limit/GoogleMapTA.jpg'
+              alt="Google Map" width= "400px" height= "auto"/>
+          </Grid>
+        </Grid>
+      <Box>
         <br />
         <Button variant="contained">PUBLISH & GO!</Button>
-      </div>
+      </Box>
     </React.Fragment>
   );
 }
