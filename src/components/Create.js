@@ -1,18 +1,5 @@
 import React, { useState } from "react";
-import Button from "@mui/material/Button";
-import Grid2 from "@mui/material/Unstable_Grid2";
-import Typography from "@mui/material/Typography";
-import Paper from "@mui/material/Paper";
-import PaperContent from "@mui/material/CardContent";
-import TextField from "@mui/material/TextField";
-import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import DialogTitle from "@mui/material/DialogTitle";
-// import Checkbox from "@mui/material/Checkbox";
-import Container from "@mui/material/Container";
-import { Link } from "@mui/material";
+import { Button, Grid, Typography, Paper, TextField, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Box } from "@mui/material";
 
 export default function Create() {
   const [open, setOpen] = useState(false);
@@ -26,7 +13,7 @@ export default function Create() {
   };
   return (
     <React.Fragment>
-      <div>
+      <Box>
         <Button variant="contained" onClick={handleClickOpen}>
           CREATE A HUNT
         </Button>
@@ -68,17 +55,14 @@ export default function Create() {
             <Button onClick={handleClose}>Create</Button>
           </DialogActions>
         </Dialog>
-      </div>
-
-      <Container sx={{ flexGrow: 1 }}>
-        <Grid2
+      </Box>
+        <Grid
           container
-          spacing={{ xs: 3, md: 4 }}
-          columns={{ xs: 6, sm: 10, md: 14 }}
+          spacing={5}
         >
-          <Grid2 xs>
+          <Grid item xs>
             <Paper
-              elevation={3}
+            elevation={3}
               sx={{
                 textAlign: "left",
                 padding: "5px",
@@ -91,46 +75,26 @@ export default function Create() {
                 },
               }}
             >
-              <PaperContent>
                 <Typography color="white" variant="h4">
                   PLACES IN HUNT
                 </Typography>
-              </PaperContent>
             </Paper>
-          </Grid2>
-          <Grid2 xs={12} sm={6}>
-            <Typography color="white" variant="h4" textAlign="center">
-              TITLE OF HUNT THIS IS WHERE THE PLACE DETAILS GO
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <Typography color="black" variant="h4" textAlign="center">
+              THIS IS WHERE THE PLACE DETAILS GO
             </Typography>
             <Button variant="contained">EDIT/SAVE</Button>
-          </Grid2>
-          <Grid2 xs>
-            <Paper
-              elevation={3}
-              sx={{
-                width: 300,
-                height: 300,
-                padding: "5px",
-                backgroundColor: "secondary.dark",
-                "&:hover": {
-                  backgroundColor: "secondary.main",
-                  opacity: [0.9, 0.8, 0.7],
-                },
-              }}
-            >
-              <PaperContent>
-                <Typography color="white" variant="h4" textAlign="Center">
-                  THIS IS A SMALLER MAP
-                </Typography>
-              </PaperContent>
-            </Paper>
-          </Grid2>
-        </Grid2>
-      </Container>
-      <div>
-        <br />
+          </Grid>
+          <Grid item xs>
+            <img
+              src='https://media.wired.com/photos/59269cd37034dc5f91bec0f1/191:100/w_1280,c_limit/GoogleMapTA.jpg'
+              alt="Google Map" width= "300px" height= "auto"/>
+          </Grid>
+        </Grid>
+      <Box>
         <Button variant="contained">PUBLISH & GO!</Button>
-      </div>
+      </Box>
     </React.Fragment>
   );
 }

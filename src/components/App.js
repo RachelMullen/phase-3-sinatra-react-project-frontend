@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
+import { Container, AppBar } from "@mui/material";
 
 import Header from "./Header";
 import Create from "./Create";
@@ -29,6 +30,11 @@ export default function App() {
   return (
     <div>
       <Header user={user} />
+      <Container
+      sx={{
+        flexGrow: 1,
+        marginY: 5,
+      }}>
       <Switch>
         <Route exact path="/create">
           <Create />
@@ -45,7 +51,8 @@ export default function App() {
         <Route exact path="/">
           <Home user={user} setUser={setUser} />
         </Route>
-      </Switch>
+        </Switch>
+        </Container>
       <Footer />
     </div>
   );

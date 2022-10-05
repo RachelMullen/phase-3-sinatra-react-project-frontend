@@ -1,17 +1,19 @@
+import {
+  Button,
+  Grid,
+  Typography,
+  Paper,
+  Box,
+  TextField,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  Container,
+} from "@mui/material";
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
-import Button from "@mui/material/Button";
-import Grid2 from "@mui/material/Unstable_Grid2";
-import Typography from "@mui/material/Typography";
-import Paper from "@mui/material/Paper";
-import PaperContent from "@mui/material/CardContent";
-import Container from "@mui/material/Container";
-import Dialog from "@mui/material/Dialog";
-import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import DialogTitle from "@mui/material/DialogTitle";
-import DialogActions from "@mui/material/DialogActions";
-import TextField from "@mui/material/TextField";
 import Squirtle from '../assets/squirtle.png';
 import Map from './Map';
 import PlaceList from './PlaceList';
@@ -19,6 +21,8 @@ import HuntList from './HuntList';
 
 
 export default function Go({ user, currentGame, setCurrentGame }) {
+  const [ isRedirect, setIsRedirect ] = useState(false);
+
   const [ isLoggedOut, setisLoggedOut ] = useState(false)
 
   return (
