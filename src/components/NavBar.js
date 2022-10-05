@@ -8,7 +8,7 @@ export default function NavBar({ user }) {
   return (
     <React.Fragment>
       <div className="navBar">
-        <NavLink to="/create" className='navLink'>
+        <NavLink to="/create" button className='navLink'>
             <AddCircle sx={{ verticalAlign: "middle", paddingBottom: "3px" }} />{" "}
             CREATE
         </NavLink>

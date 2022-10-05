@@ -1,21 +1,4 @@
 import React, { useState } from "react";
-<<<<<<< HEAD
-import { Redirect } from "react-router-dom";
-import {
-  Button,
-  Box,
-  Grid,
-  Typography,
-  Paper,
-  PaperContent,
-  TextField,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogContentText,
-  DialogTitle,
-} from "@mui/material";
-=======
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import Dialog from "@mui/material/Dialog";
@@ -23,7 +6,6 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
->>>>>>> 39b9a73011e2e9073ff0224d1667c1c56806b7ad
 
 export default function Home({ setUser, user }) {
   const [userInput, setUserInput] = useState(["","",""]);
@@ -76,13 +58,9 @@ export default function Home({ setUser, user }) {
         <Dialog open={open} onClose={handleSignUp}>
           <DialogTitle>SIGN UP</DialogTitle>
           <DialogContent>
-<<<<<<< HEAD
-            <DialogContentText>Sign up for an account.</DialogContentText>
-=======
             <DialogContentText>
               Make an account and get galloping.
             </DialogContentText>
->>>>>>> 39b9a73011e2e9073ff0224d1667c1c56806b7ad
             <TextField
               autoFocus
               margin="dense"
@@ -116,13 +94,7 @@ export default function Home({ setUser, user }) {
             />
           </DialogContent>
           <DialogActions>
-<<<<<<< HEAD
-            <Button onClick={user ? <Redirect to="/go" /> : null}>
-              Sign Up
-            </Button>
-=======
             <Button onClick={handleSignUp}>Sign Up</Button>
->>>>>>> 39b9a73011e2e9073ff0224d1667c1c56806b7ad
           </DialogActions>
         </Dialog>
       </div>
