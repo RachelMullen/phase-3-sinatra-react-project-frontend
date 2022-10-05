@@ -41,6 +41,8 @@ export default function Go({ user, currentGame, setCurrentGame }) {
 
 
       {/* {user ? (<p style={{ color: "black" }}>Current User is {user[0].username}</p>) : null} */}
+      {console.log("go huntlist:")}
+      {console.log(user[2]["in_progress"])}
       {currentGame ? <PlaceList user={user} list={currentGame}/> : null}
       <Map list={currentGame}/>
 

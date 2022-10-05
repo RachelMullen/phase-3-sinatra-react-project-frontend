@@ -8,7 +8,7 @@ export default function Map ({ list }) {
 
   function grabAllCoordinates () {
     if (list) {
-      console.log(list)
+      // console.log(list)
       let staging = [];
       let name = Object.keys(list)
       list[name].map(place => {
@@ -25,7 +25,7 @@ export default function Map ({ list }) {
 }
 
 
-console.log(pinArray)
+// console.log(pinArray)
 // all the shit above this
 
 
