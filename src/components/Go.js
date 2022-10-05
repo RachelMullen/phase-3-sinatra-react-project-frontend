@@ -24,7 +24,7 @@ export default function Go({ user, currentGame, setCurrentGame }) {
   return (
     <>
       {/* redirect sign in */}
-      <Dialog open={user != [{},{},{},{}]} onClose={() => setisLoggedOut(true)}>
+      <Dialog open={!user} onClose={() => setisLoggedOut(true)}>
         <DialogTitle>Please Log In Or Make An Account</DialogTitle>
         <DialogContent>
           <img src={Squirtle}></img>

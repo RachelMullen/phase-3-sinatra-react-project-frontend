@@ -20,9 +20,16 @@ export default function NavBar({ user })  {
         <span className ="navBar">GO</span>
         </NavLink>
 
+        { !user ?
         <NavLink to="/login">
-        <span className ="navBar">{user ? "DASHBOARD" : "LOG IN"}</span>
+        <span className ="navBar">LOG IN</span>
         </NavLink>
+        : null}
+        { user ?
+        <NavLink to="/dashboard">
+        <span className ="navBar">DASHBOARD</span>
+        </NavLink>
+        : null}
       </div>
     </React.Fragment>
   );
