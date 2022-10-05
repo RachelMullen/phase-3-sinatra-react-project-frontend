@@ -39,8 +39,9 @@ export default function Go({ user, currentGame, setCurrentGame }) {
       </Dialog>
       : null}
 
-      {user ? (<p style={{ color: "black" }}>Current User is {user[0].username}</p>) : null}
-      <PlaceList user={user} list={currentGame}/>
+
+      {/* {user ? (<p style={{ color: "black" }}>Current User is {user[0].username}</p>) : null} */}
+      {currentGame ? <PlaceList user={user} list={currentGame}/> : null}
       <Map currentGame={currentGame}/>
 
       {isLoggedOut ? <Redirect to="/" /> : null}
