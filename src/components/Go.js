@@ -33,7 +33,7 @@ export default function Go({ user, currentGame, setCurrentGame }) {
 
       {/* pop-up choose game */}
       { user ? 
-      <Dialog open={!currentGame && user == [{},{},{},{}]}>
+      <Dialog open={!currentGame}>
         <DialogTitle>Please Select A Hunt</DialogTitle>
         <HuntList list={user[2]["in_progress"]} setCurrentGame={setCurrentGame}/>
       </Dialog>
