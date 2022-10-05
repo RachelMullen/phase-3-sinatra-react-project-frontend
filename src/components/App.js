@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
 
 import Header from "./Header";
@@ -15,6 +15,16 @@ import "../index.css";
 export default function App() {
   const [user, setUser ] = useState();
   const [ currentGame, setCurrentGame ] = useState();
+
+  useEffect(() => {
+    if (user) {
+      fetch(`http://localhost:9292/users/${user.username}/${user.password}`)
+        .then((resp) => resp.json())
+        .then((data) => {
+          setUser(data);
+        });
+    }
+  },[currentGame])
 
   return (
     <div>

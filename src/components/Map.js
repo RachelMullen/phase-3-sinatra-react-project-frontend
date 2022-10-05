@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import {GoogleMap, InfoWindow, LoadScript, Marker} from '@react-google-maps/api';
 
-export default function Map () {
+export default function Map ({ currentGame }) {
+
+  console.log(currentGame)
 
   const containerStyle = {
     height: '90vh',
