@@ -6,9 +6,10 @@ export default function Map ({ list }) {
 
   function grabAllCoordinates () {
     if (list) {
+      console.log(list)
       let name = Object.keys(list)
         list[name].map(place => {
-          coords.push([place[0].place.latitude, place[0].place.longitude]);
+          coords.push([place[0].place.latitude, place[0].place.longitude, place[1].linked_visit[0].complete]);
         })
     }
 }
