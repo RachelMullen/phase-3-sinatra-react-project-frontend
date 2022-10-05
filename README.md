@@ -8,7 +8,7 @@
 
 ## FUNCTION & FEATURES
 
-TBD NAME OF PROJECT is an app for anyone who wants to create a one-stop shop organize their experiences. 
+TBD NAME OF PROJECT is an app for anyone who wants to create a one-stop shop organize their experiences. Save your favorite places, explore location collections, and <strong>track</strong> your progress all in one spot. 
 
 Leveraging Google Map’s API, users can:
 - Login and create an account.

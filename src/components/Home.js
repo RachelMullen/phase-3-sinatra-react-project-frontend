@@ -77,53 +77,6 @@ export default function Home({ user, setUser }) {
             </Button>
           </DialogActions>
         </Dialog>
-<<<<<<< HEAD
-      </Box>
-      <Box>
-        Already have an account?{" "}
-        {/* <strong>
-            <a href="http://localhost:3000/login">Log In.</a>
-          </strong> */}
-      </Box>
-      <Box>
-        <Button variant="contained" onClick={handleClickOpen}>
-          LOG IN
-        </Button>
-        <Dialog open={open} onClose={handleClose}>
-          <DialogTitle>LOG IN</DialogTitle>
-          <DialogContent>
-            <DialogContentText>Log in to your account.</DialogContentText>
-            <TextField
-              autoFocus
-              margin="dense"
-              id="name"
-              label="Email Address"
-              type="email"
-              fullWidth
-              variant="standard"
-              value={userInput[0]}
-              onChange={(e) => setUserInput([e.target.value, userInput[1]])}
-            />
-            <TextField
-              autoFocus
-              margin="dense"
-              id="name"
-              label="Password"
-              type="password"
-              fullWidth
-              variant="standard"
-              value={userInput[1]}
-              onChange={(e) => setUserInput([userInput[0], e.target.value])}
-            />
-          </DialogContent>
-          <DialogActions>
-            <Button onClick={user ? <Redirect to="/dashboard" /> : null}>
-              Log In
-            </Button>
-          </DialogActions>
-        </Dialog>
-      </Box>
-=======
       </div>
       <div>
         <p>
@@ -174,7 +127,6 @@ export default function Home({ user, setUser }) {
         </p> */}
       </div> 
       
->>>>>>> 19c8e1fa47ffef272119d5d84393e3aebe281cf7
     </React.Fragment>
   );
 }

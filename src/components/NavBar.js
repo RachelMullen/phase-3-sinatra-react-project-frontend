@@ -7,37 +7,28 @@ import Squirtle from "../assets/squirtle.png";
 export default function NavBar({ user }) {
   return (
     <React.Fragment>
-      <Box>
-        <NavLink to="/create">
-          <span className="navBar">
+      <div className="navBar">
+        <NavLink to="/create" className='navLink'>
             <AddCircle sx={{ verticalAlign: "middle", paddingBottom: "3px" }} />{" "}
             CREATE
-          </span>
         </NavLink>
-
-        <NavLink to="/explore">
-          <span className="navBar">
+        <NavLink to="/explore" className='navLink'>
             <Explore sx={{ verticalAlign: "middle", paddingBottom: "3px" }} />
             EXPLORE
-          </span>
         </NavLink>
 
         {/* <img className="main-logo" width="55px" src={Squirtle}></img> */}
 
-        <NavLink to="/go">
-          <span className="navBar">
+        <NavLink to="/go" className='navLink'>
             <PinDrop sx={{ verticalAlign: "middle", paddingBottom: "3px" }} />
             GO
-          </span>
         </NavLink>
 
-        <NavLink to="/login">
-          <span className="navBar">
+        <NavLink to="/login" className='navLink'>
             <Input sx={{ verticalAlign: "middle", paddingBottom: "3px" }} />
             {user ? "DASHBOARD" : "LOG IN"}
-          </span>
         </NavLink>
-      </Box>
+      </div>
     </React.Fragment>
   );
 }
