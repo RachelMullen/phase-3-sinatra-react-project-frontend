@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { AddCircle, PinDrop, Explore, Input } from "@mui/icons-material";
 import { Box } from "@mui/material";
-import Squirtle from "../assets/squirtle.png";
+import UpQuest from '../assets/UpQuest.png';
 
 export default function NavBar({ user }) {
   return (
@@ -16,8 +16,7 @@ export default function NavBar({ user }) {
             <Explore sx={{ verticalAlign: "middle", paddingBottom: "3px" }} />
             EXPLORE
         </NavLink>
-
-        {/* <img className="main-logo" width="55px" src={Squirtle}></img> */}
+        <img src={UpQuest} alt="Logo" width="200px"/>
 
         <NavLink to="/go" className='navLink'>
             <PinDrop sx={{ verticalAlign: "middle", paddingBottom: "3px" }} />

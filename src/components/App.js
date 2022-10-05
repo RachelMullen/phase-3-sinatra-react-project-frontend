@@ -28,7 +28,7 @@ export default function App() {
   },[currentGame])
 
   return (
-    <React.Fragment>
+    <div>
       <Header user={user} />
       <Container
       sx={{
@@ -51,13 +51,9 @@ export default function App() {
         <Route exact path="/">
           <Home user={user} setUser={setUser} />
         </Route>
-      </Switch>
-<<<<<<< HEAD
-      </Container>
-      </React.Fragment>
-=======
+        </Switch>
+        </Container>
       <Footer />
     </div>
->>>>>>> 50ca605e8479964c4617024fee98eb2daf1b3864
   );
 }
