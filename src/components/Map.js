@@ -1,22 +1,33 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import {GoogleMap, InfoWindow, LoadScript, Marker} from '@react-google-maps/api';
 
 export default function Map ({ list }) {
-  let coords = [];
+  const [ pinArray, setPinArray ] = useState([]);
+
+  useEffect(() => setPinArray(grabAllCoordinates()),[list]);
 
   function grabAllCoordinates () {
     if (list) {
       console.log(list)
+      let staging = [];
       let name = Object.keys(list)
-        list[name].map(place => {
-          coords.push([place[0].place.latitude, place[0].place.longitude, place[1].linked_visit[0].complete]);
-        })
+      list[name].map(place => {
+        staging.push([place[0].place.latitude,
+                    place[0].place.longitude,
+                    `complete: ${place[1].linked_visit[0].complete}`,
+                    `favorite: ${place[1].linked_visit[0].favorite}`,
+                    `wishlist: ${place[1].linked_visit[0].wishlist}`,
+                    `avoid: ${place[1].linked_visit[0].avoid}`,
+                  ]);
+      })
+      return staging;
     }
 }
 
-grabAllCoordinates();
+console.log(pinArray)
+// all the shit above this
 
-console.log(coords)
+
 
   const containerStyle = {
     height: '90vh',
