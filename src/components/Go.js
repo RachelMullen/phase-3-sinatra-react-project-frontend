@@ -36,9 +36,13 @@ import HuntList from './HuntList';
 
 
 export default function Go({ user, currentGame, setCurrentGame }) {
+<<<<<<< HEAD
   const [ isRedirect, setIsRedirect ] = useState(false);
 
 >>>>>>> 39b9a73011e2e9073ff0224d1667c1c56806b7ad
+=======
+  const [ isLoggedOut, setisLoggedOut ] = useState(false)
+>>>>>>> 50ca605e8479964c4617024fee98eb2daf1b3864
 
   return (
 <<<<<<< HEAD
@@ -109,24 +113,26 @@ export default function Go({ user, currentGame, setCurrentGame }) {
 =======
     <>
       {/* redirect sign in */}
-      <Dialog open={!user} onClose={() => setIsRedirect(true)}>
+      <Dialog open={user != [{},{},{},{}]} onClose={() => setisLoggedOut(true)}>
         <DialogTitle>Please Log In Or Make An Account</DialogTitle>
         <DialogContent>
           <img src={Squirtle}></img>
         </DialogContent>
       </Dialog>
 
-      {/* redirect sign in */}
-      <Dialog open={!currentGame && user} onClose={() => setIsRedirect(true)}>
+      {/* pop-up choose game */}
+      { user ? 
+      <Dialog open={!currentGame && user == [{},{},{},{}]}>
         <DialogTitle>Please Select A Hunt</DialogTitle>
         <HuntList list={user[2]["in_progress"]} setCurrentGame={setCurrentGame}/>
       </Dialog>
+      : null}
 
       {user ? (<p style={{ color: "black" }}>Current User is {user[0].username}</p>) : null}
       <PlaceList user={user} list={currentGame}/>
-      <Map />
+      <Map currentGame={currentGame}/>
 
-      {isRedirect ? <Redirect to="/" /> : null}
+      {isLoggedOut ? <Redirect to="/" /> : null}
     </>
 >>>>>>> 39b9a73011e2e9073ff0224d1667c1c56806b7ad
   );

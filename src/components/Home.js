@@ -18,7 +18,7 @@ export default function Home({ setUser, user }) {
   
   const handleSignUp = () => {
 
-    if (userInput[1] == userInput[2]) {
+    if (userInput[1] == userInput[2] && userInput[0] !== "" && userInput[1] !== "" && userInput[2] !== "") {
 
       let userObj = {
         "username": userInput[0],
@@ -38,9 +38,11 @@ export default function Home({ setUser, user }) {
         setUserInput(["","",""])
       });
   
-    } else {
+    } else if (userInput[1] !== userInput[2] ) {
       alert("Please make sure passwords match!");
       setUserInput([userInput[0],"",""]);
+    } else if (userInput[1] === "" && userInput[2] === "") {
+      setOpen(false);
     }
   };
 

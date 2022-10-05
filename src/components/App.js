@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
 import { Container, AppBar } from "@mui/material";
 
@@ -16,6 +16,16 @@ import "../index.css";
 export default function App() {
   const [user, setUser ] = useState();
   const [ currentGame, setCurrentGame ] = useState();
+
+  useEffect(() => {
+    if (user) {
+      fetch(`http://localhost:9292/users/${user.username}/${user.password}`)
+        .then((resp) => resp.json())
+        .then((data) => {
+          setUser(data);
+        });
+    }
+  },[currentGame])
 
   return (
     <React.Fragment>
@@ -41,9 +51,13 @@ export default function App() {
         <Route exact path="/">
           <Home user={user} setUser={setUser} />
         </Route>
-        <Footer />
       </Switch>
+<<<<<<< HEAD
       </Container>
       </React.Fragment>
+=======
+      <Footer />
+    </div>
+>>>>>>> 50ca605e8479964c4617024fee98eb2daf1b3864
   );
 }
