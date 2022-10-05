@@ -12,13 +12,13 @@ export default function Map ({ list }) {
       let staging = [];
       let name = Object.keys(list)
       list[name].map(place => {
-        staging.push([{latitude: `${place[0].place.latitude}`},
-                    {longitude: `${place[0].place.longitude}`},
-                    {complete: `${place[1].linked_visit[0].complete}`},
-                    {favorite: `${place[1].linked_visit[0].favorite}`},
-                    {wishlist: `${place[1].linked_visit[0].wishlist}`},
-                    {avoid: `${place[1].linked_visit[0].avoid}`}
-                  ]);
+        staging.push({latitude: `${place[0].place.latitude}`,
+                    longitude: `${place[0].place.longitude}`,
+                    complete: `${place[1].linked_visit[0].complete}`,
+                    favorite: `${place[1].linked_visit[0].favorite}`,
+                    wishlist: `${place[1].linked_visit[0].wishlist}`,
+                    avoid: `${place[1].linked_visit[0].avoid}`}
+                  );
       })
       return staging;
     }
