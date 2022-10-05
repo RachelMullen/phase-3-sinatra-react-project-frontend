@@ -34,13 +34,14 @@ export default function Home({ user, setUser }) {
 
   return (
     <React.Fragment>
-      <h1>TRACK YOUR FUN</h1>
+      <h1>Welcome trackies*,</h1>
       <p>
-        <em>A list-based app to track your fun!</em>{" "}
+      <strong>Tracky</strong> is a one-stop shop to organize your experiences.
+      Save your favorite places, explore location collections, and track your gallops all in one spot. 
       </p>
-      <p>Welcome, please sign in or create an account you absolute clown!</p>
+      
       <div>
-        <Button variant="contained" onClick={handleClickOpen}>
+        <Button onClick={handleClickOpen}>
           SIGN UP
         </Button>
         <Dialog open={open} onClose={handleClose}>
@@ -80,11 +81,11 @@ export default function Home({ user, setUser }) {
       <div>
         <p>
           Already have an account?{" "}
-          {/* <strong>
+          <strong>
             <a href="http://localhost:3000/login">Log In.</a>
-          </strong> */}
+          </strong>
         </p>
-        <p>
+        {/* <p>
           <Button variant="contained" onClick={user ? <Redirect to="/go" /> : null}>
             LOG IN
           </Button>
@@ -123,8 +124,9 @@ export default function Home({ user, setUser }) {
               </Button>
             </DialogActions>
           </Dialog>
-        </p>
-      </div>
+        </p> */}
+      </div> 
+      
     </React.Fragment>
   );
 }

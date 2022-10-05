@@ -50,6 +50,7 @@ export default function SignUp({ setUser }) {
           {renderForm}
         </div>
       </div>
+      
     </React.Fragment>
   );
 }
