@@ -8,7 +8,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 
-export default function Home({ setUser }) {
+export default function Home({ setUser, user }) {
   const [userInput, setUserInput] = useState(["","",""]);
   const [open, setOpen] = useState(false);
   
@@ -107,6 +107,7 @@ export default function Home({ setUser }) {
           </strong>
         </p>
       </div>
+      {user ? <Redirect to="/go" /> : null}
     </React.Fragment>
   );
 }
