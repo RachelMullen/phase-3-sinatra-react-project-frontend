@@ -18,7 +18,7 @@ export default function PlaceFull({ place }) {
         <>
             <h2 id="go-selected-place" style={{ fontSize: "2rem"}}>{place[0].place.name}</h2>
             <button id="visit-button" style={{ color: "green"}}>VISIT BUTTON</button>
-            <p id="go-selected-place-descrip">description (coming soon): {place[0].place.description}</p>
+            <p id="go-selected-place-descrip">description: {place[0].place.description}</p>
             {/* <p>latitude: {place[0].place.latitude}</p>
             <p>longitude: {place[0].place.latitude}</p> */}
             {comments}
