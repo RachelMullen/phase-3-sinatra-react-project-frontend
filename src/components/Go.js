@@ -9,7 +9,8 @@ import Comment from "./Comment";
 
 
 export default function Go({ user, currentGame, setCurrentGame }) {
-  const [isLoggedOut, setisLoggedOut] = useState(false);
+  const [ isLoggedOut, setisLoggedOut ] = useState(false)
+  const [ redirect , setRedirect ] = useState("") 
 
   return (
     <React.Fragment>
@@ -22,32 +23,30 @@ export default function Go({ user, currentGame, setCurrentGame }) {
       </Dialog>
 
       {/* pop-up choose game */}
-      {user ? (
-        <Dialog open={!currentGame}>
-          <DialogTitle>Please Select A Hunt</DialogTitle>
-          <HuntList
-            container={"go"}
-            list={user[2]["in_progress"]}
-            setCurrentGame={setCurrentGame}
-          />
-        </Dialog>
-      ) : null}
+      { user[2]["in_progress"].length > 1 ? 
+      <Dialog open={!currentGame}>
+        <DialogTitle>Please Select A Hunt</DialogTitle>
+        <HuntList container={"go"} list={user[2]["in_progress"]} setCurrentGame={setCurrentGame}/>
+      </Dialog>
+      :
+      <Dialog open={true} onClose={() => setRedirect("explore")}>
+        <DialogTitle>Please Visit The Explore Or Create Page</DialogTitle>
+        <DialogContent>
+          <img src={Squirtle}></img>
+        </DialogContent>
+      </Dialog>
+      }
+
 
       {/* {user ? (<p style={{ color: "black" }}>Current User is {user[0].username}</p>) : null} */}
       {/* {console.log("go huntlist:")}
       {console.log(user[2]["in_progress"])} */}
-      {currentGame ? <PlaceList user={user} list={currentGame} /> : null}
-      
-      <div class="flexContainer">
-        <div className="flexItemSmall"><Map list={currentGame} />
-          <Comment />
-          <HuntCard />
-        </div>
+      {currentGame ? <PlaceList user={user} list={currentGame}/> : null}
+      {currentGame ? <Map list={currentGame}/> : null}
 
         </div>
       {isLoggedOut ? <Redirect to="/" /> : null}
- 
-        </React.Fragment>
-
+      {redirect == "explore" ? <Redirect to="/explore" /> : null}
+    </>
   );
 }

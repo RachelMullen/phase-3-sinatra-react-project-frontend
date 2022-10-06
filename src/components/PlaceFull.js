@@ -4,7 +4,15 @@ import Comment from "./Comment";
 
 export default function PlaceFull({ place }) {
 
-  const comments = place[0].comments.map((comment) => {
+    const comments = place[0].comments.map(comment => {
+
+        return (
+            <div id="comment-list" key={uuid()}>
+                <Comment comment={comment}/>
+            </div>
+        )
+    })
+
     return (
       <div id="comment-list" key={uuid()}>
         <Comment comment={comment}/>

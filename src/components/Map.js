@@ -5,6 +5,10 @@ import {
   LoadScript,
   Marker,
 } from "@react-google-maps/api";
+<<<<<<< HEAD
+=======
+import { v4 as uuid } from "uuid";
+>>>>>>> 748dc20d41eb6c1c856e57949f365634cffb7746
 
 export default function Map({ list }) {
   const [pinArray, setPinArray] = useState([]);
@@ -13,8 +17,8 @@ export default function Map({ list }) {
 
   function grabAllCoordinates() {
     if (list) {
-      console.log("attempting to parse list of places");
-      console.log(list);
+      console.log("attempting to parse list of places")
+      console.log(list)
       let staging = [];
       let name = Object.keys(list);
       list[name].map((place) => {
@@ -31,32 +35,32 @@ export default function Map({ list }) {
     }
   }
 
-  //   let trip = [
-  //     {
-  //         latitude: 39.7382,
-  //         longitude: -104.9902,
-  //         complete: false,
-  //         favorite: false,
-  //         wishlist: false,
-  //         avoid: true
-  //     },
-  //     {
-  //         latitude: 39.7392,
-  //         longitude: -104.9922,
-  //         complete: false,
-  //         favorite: true,
-  //         wishlist: false,
-  //         avoid: true
-  //     },
-  //     {
-  //         latitude: 39.7372,
-  //         longitude: -104.9912,
-  //         complete: false,
-  //         favorite: true,
-  //         wishlist: false,
-  //         avoid: false
-  //     }
-  // ]
+//   let trip = [
+//     {
+//         latitude: 39.7382,
+//         longitude: -104.9902,
+//         complete: false,
+//         favorite: false,
+//         wishlist: false,
+//         avoid: true
+//     },
+//     {
+//         latitude: 39.7392,
+//         longitude: -104.9922,
+//         complete: false,
+//         favorite: true,
+//         wishlist: false,
+//         avoid: true
+//     },
+//     {
+//         latitude: 39.7372,
+//         longitude: -104.9912,
+//         complete: false,
+//         favorite: true,
+//         wishlist: false,
+//         avoid: false
+//     }
+// ]
 
   // handles the view region
   const [center, setCenter] = useState({
@@ -78,7 +82,8 @@ export default function Map({ list }) {
     }
   }
 
-  // console.log(pinArray)
+  console.log("console logging pinArray");
+  console.log(pinArray);
 
   const containerStyle = {
     height: "90vh",
@@ -90,35 +95,37 @@ export default function Map({ list }) {
     zoomControls: true,
   };
 
+  // console.log(pinArray);
+
   return (
     <div id="mapContainer">
-      {pinArray ? (
-        <LoadScript
-          id="map"
-          googleMapsApiKey="AIzaSyBU05O2xt-HlE4y5SUo0tHnCB0WcUi6Rk4"
-          mapId="d7d3b3829ba8148c"
+      {pinArray ?
+      <LoadScript
+        id="map"
+        googleMapsApiKey="AIzaSyBU05O2xt-HlE4y5SUo0tHnCB0WcUi6Rk4"
+        mapId="d7d3b3829ba8148c"
+      >
+        <GoogleMap
+          // onClick={recenter}
+          mapContainerStyle={containerStyle}
+          zoom={13.5} //gotta come up with a formula for a dynamic zoom that adjusts every time a pin is placed
+          center={center}
+          options={settings}
         >
-          <GoogleMap
-            // onClick={recenter}
-            mapContainerStyle={containerStyle}
-            zoom={13.5} //gotta come up with a formula for a dynamic zoom that adjusts every time a pin is placed
-            center={center}
-            options={settings}
-          >
-            {pinArray.map((visit) => (
-              <Marker
-                id="marker"
-                key={visit.id}
-                position={{
-                  lat: parseFloat(visit.latitude),
-                  lng: parseFloat(visit.longitude),
-                }}
-                icon={determineIcon(visit)}
-              />
-            ))}
-          </GoogleMap>
-        </LoadScript>
-      ) : null}
+          {pinArray.map((visit) => (
+            <Marker
+              id="marker"
+              key={uuid()}
+              position={{
+                lat: parseFloat(visit.latitude),
+                lng: parseFloat(visit.longitude),
+              }}
+              icon={determineIcon(visit)}
+            />
+          ))}
+        </GoogleMap>
+      </LoadScript>
+      : null}
     </div>
   );
 }
