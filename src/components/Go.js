@@ -52,7 +52,7 @@ export default function Go({ user, currentGame, setCurrentGame }) {
       {/* {console.log("go huntlist:")}
       {console.log(user[2]["in_progress"])} */}
       {currentGame ? <PlaceList user={user} list={currentGame}/> : null}
-      <Map list={currentGame}/>
+      {currentGame ? <Map list={currentGame}/> : null}
 
       {isLoggedOut ? <Redirect to="/" /> : null}
       {redirect == "explore" ? <Redirect to="/explore" /> : null}

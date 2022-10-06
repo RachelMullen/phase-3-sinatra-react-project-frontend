@@ -79,7 +79,8 @@ export default function Map({ list }) {
     }
   }
 
-  // console.log(pinArray)
+  console.log("console logging pinArray");
+  console.log(pinArray);
 
   const containerStyle = {
     height: "90vh",

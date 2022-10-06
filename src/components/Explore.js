@@ -9,7 +9,7 @@ import { Link } from "@mui/material";
 import Map from './Map';
 import HuntList from './HuntList';
 
-export default function Explore() {
+export default function Explore({ user, setCurrentGame }) {
   const [ publicHunts, setPublicHunts ] = useState();
 
   useEffect(() => {
@@ -24,7 +24,7 @@ export default function Explore() {
 
   return (
     <React.Fragment>
-      <HuntList container={"explore"} list={publicHunts}/>
+      <HuntList setCurrentGame={setCurrentGame} user={user} container={"explore"} list={publicHunts}/>
       <Map />
 
 

@@ -34,7 +34,7 @@ export default function App() {
           <Create />
         </Route>
         <Route exact path="/explore">
-          <Explore />
+          <Explore setCurrentGame={setCurrentGame} user={user} />
         </Route>
         <Route exact path="/go">
           <Go user={user} setCurrentGame={setCurrentGame} currentGame={currentGame} />
