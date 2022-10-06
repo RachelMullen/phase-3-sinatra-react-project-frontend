@@ -28,13 +28,6 @@ export default function Explore({ setReload, user, setCurrentGame }) {
       <Map />
 
 
-
-
-
-
-
-
-
       <br />
       <br />
       <br />
