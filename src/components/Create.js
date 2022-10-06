@@ -1,5 +1,18 @@
 import React, { useState } from "react";
-import { Button, Grid, Typography, Paper, TextField, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Box } from "@mui/material";
+import {
+  Button,
+  Grid,
+  Typography,
+  Paper,
+  TextField,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  Box,
+} from "@mui/material";
+import GoogleMapTA from "../assets/GoogleMapTA.jpg";
 
 export default function Create() {
   const [open, setOpen] = useState(false);
@@ -13,88 +26,77 @@ export default function Create() {
   };
   return (
     <React.Fragment>
-      <Box>
-        <Button variant="contained" onClick={handleClickOpen}>
-          CREATE A HUNT
-        </Button>
-        <Dialog open={open} onClose={handleClose}>
-          <DialogTitle>CREATE A HUNT</DialogTitle>
-          <DialogContent>
-            <DialogContentText>
-              Add the information below to create a new hunt.
-            </DialogContentText>
-            <TextField
-              autoFocus
-              margin="dense"
-              id="name"
-              label=" Name"
-              type="text"
-              fullWidth
-              variant="standard"
-            />
-            <TextField
-              autoFocus
-              margin="dense"
-              id="name"
-              label=" Location"
-              type="text"
-              fullWidth
-              variant="standard"
-            />
-            <TextField
-              autoFocus
-              margin="dense"
-              id="name"
-              label=" Desription"
-              type="text"
-              fullWidth
-              variant="standard"
-            />
-          </DialogContent>
-          <DialogActions>
-            <Button onClick={handleClose}>Create</Button>
-          </DialogActions>
-        </Dialog>
-      </Box>
-        <Grid
-          container
-          spacing={5}
-        >
-          <Grid item xs>
-            <Paper
-            elevation={3}
-              sx={{
-                textAlign: "left",
-                padding: "5px",
-                width: 300,
-                height: 300,
-                backgroundColor: "secondary.dark",
-                "&:hover": {
-                  backgroundColor: "secondary.main",
-                  opacity: [0.9, 0.8, 0.7],
-                },
-              }}
-            >
-                <Typography color="white" variant="h4">
-                  PLACES IN HUNT
-                </Typography>
-            </Paper>
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <Typography color="black" variant="h4" textAlign="center">
-              THIS IS WHERE THE PLACE DETAILS GO
-            </Typography>
-            <Button variant="contained">EDIT/SAVE</Button>
-          </Grid>
-          <Grid item xs>
-            <img
-              src='https://media.wired.com/photos/59269cd37034dc5f91bec0f1/191:100/w_1280,c_limit/GoogleMapTA.jpg'
-              alt="Google Map" width= "300px" height= "auto"/>
-          </Grid>
-        </Grid>
-      <Box>
-        <Button variant="contained">PUBLISH & GO!</Button>
-      </Box>
+      <button className="medium-button" onClick={handleClickOpen}>
+        CREATE A HUNT
+      </button>
+      <Dialog open={open} onClose={handleClose}>
+        <DialogTitle>CREATE A HUNT</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            Add the information below to create a new hunt.
+          </DialogContentText>
+          <TextField
+            autoFocus
+            margin="dense"
+            id="name"
+            label=" Name"
+            type="text"
+            fullWidth
+            variant="standard"
+          />
+          <TextField
+            autoFocus
+            margin="dense"
+            id="name"
+            label=" Location"
+            type="text"
+            fullWidth
+            variant="standard"
+          />
+          <TextField
+            autoFocus
+            margin="dense"
+            id="name"
+            label=" Desription"
+            type="text"
+            fullWidth
+            variant="standard"
+          />
+        </DialogContent>
+        <DialogActions>
+          <button onClick={handleClose}>Create</button>
+        </DialogActions>
+      </Dialog>
+      <div class="flexContainer">
+        <div className="flexItemSmall">
+          <div>
+          <h2>PLACES IN HUNT</h2>
+          <ul>
+            <li>
+              Blah blah blah
+            </li>
+            </ul>
+          </div>
+        </div>
+        <div className="flexItemLarge">
+        <div>
+          <h2>TITLE OF HUNT</h2>
+          <p>THIS IS WHERE THE PLACE DETAILS GO</p>
+          <br/>
+            <button>EDIT/SAVE</button>
+            </div>
+        </div>
+        <div className="flexItemSmall">
+          <div>
+        <img src={GoogleMapTA} alt="Logo" max-width="100%"
+              height="100px" />
+            </div>
+        </div>
+      </div>
+
+      <div>
+        <button className="large-button">PUBLISH & GO!</button>
+      </div>
     </React.Fragment>
   );
 }

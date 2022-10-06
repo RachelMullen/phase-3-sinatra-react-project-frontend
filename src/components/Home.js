@@ -1,5 +1,5 @@
+import { Redirect } from "react-router-dom";
 import React, { useState } from "react";
-import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
@@ -8,23 +8,25 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 
 export default function Home({ setUser, user }) {
-  const [userInput, setUserInput] = useState(["","",""]);
+  const [userInput, setUserInput] = useState(["", "", ""]);
   const [open, setOpen] = useState(false);
-  
-  
+
   const handleClickOpen = () => {
     setOpen(true);
   };
-  
+
   const handleSignUp = () => {
-
-    if (userInput[1] == userInput[2] && userInput[0] !== "" && userInput[1] !== "" && userInput[2] !== "") {
-
+    if (
+      userInput[1] == userInput[2] &&
+      userInput[0] !== "" &&
+      userInput[1] !== "" &&
+      userInput[2] !== ""
+    ) {
       let userObj = {
-        "username": userInput[0],
-        "password": userInput[1],
-      }
-  
+        username: userInput[0],
+        password: userInput[1],
+      };
+
       fetch("http://localhost:9292/users", {
         method: "POST",
         headers: {
@@ -32,15 +34,14 @@ export default function Home({ setUser, user }) {
         },
         body: JSON.stringify(userObj),
       })
-      .then((resp) => resp.json())
-      .then((data) => {
-        setUser(data)
-        setUserInput(["","",""])
-      });
-  
-    } else if (userInput[1] !== userInput[2] ) {
+        .then((resp) => resp.json())
+        .then((data) => {
+          setUser(data);
+          setUserInput(["", "", ""]);
+        });
+    } else if (userInput[1] !== userInput[2]) {
       alert("Please make sure passwords match!");
-      setUserInput([userInput[0],"",""]);
+      setUserInput([userInput[0], "", ""]);
     } else if (userInput[1] === "" && userInput[2] === "") {
       setOpen(false);
     }
@@ -48,6 +49,7 @@ export default function Home({ setUser, user }) {
 
   return (
     <React.Fragment>
+      
       <h1>Welcome trackies*,</h1>
       <p>
         <strong>Tracky</strong> is a one-stop shop to organize your experiences.
@@ -56,7 +58,7 @@ export default function Home({ setUser, user }) {
       </p>
 
       <div>
-        <Button onClick={handleClickOpen}>SIGN UP</Button>
+        <button onClick={handleClickOpen}>SIGN UP</button>
         <Dialog open={open} onClose={handleSignUp}>
           <DialogTitle>SIGN UP</DialogTitle>
           <DialogContent>
@@ -72,7 +74,9 @@ export default function Home({ setUser, user }) {
               fullWidth
               variant="standard"
               value={userInput[0]}
-              onChange={(e) => setUserInput([e.target.value, userInput[1], userInput[2]])}
+              onChange={(e) =>
+                setUserInput([e.target.value, userInput[1], userInput[2]])
+              }
             />
             <TextField
               margin="dense"
@@ -82,7 +86,9 @@ export default function Home({ setUser, user }) {
               fullWidth
               variant="standard"
               value={userInput[1]}
-              onChange={(e) => setUserInput([userInput[0], e.target.value, userInput[2]])}
+              onChange={(e) =>
+                setUserInput([userInput[0], e.target.value, userInput[2]])
+              }
             />
             <TextField
               margin="dense"
@@ -92,11 +98,13 @@ export default function Home({ setUser, user }) {
               fullWidth
               variant="standard"
               value={userInput[2]}
-              onChange={(e) => setUserInput([userInput[0], userInput[1], e.target.value])}
+              onChange={(e) =>
+                setUserInput([userInput[0], userInput[1], e.target.value])
+              }
             />
           </DialogContent>
           <DialogActions>
-            <Button onClick={handleSignUp}>Sign Up</Button>
+            <button onClick={handleSignUp}>Sign Up</button>
           </DialogActions>
         </Dialog>
       </div>

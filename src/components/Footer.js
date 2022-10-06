@@ -1,20 +1,19 @@
 import React from "react";
-import CssBaseline from "@mui/material/CssBaseline";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import Link from "@mui/material/Link";
-
 export default function Footer() {
   return (
     <React.Fragment>
-      <div id="footer">
+      <footer>
         <p>
-          {" "}
-          © Babe City 2022 | Luke Chamley | Elliot Mangini | Rachel Mullen |
-          Cassidy Wagner
+          © Babe City 2022 |
+          <a href="https://www.linkedin.com/in/luke-chamley/">Luke Chamley</a>
+          |
+          <a href="https://www.linkedin.com/in/elliotmangini/">Elliot Mangini</a>
+          |
+          <a href="https://www.linkedin.com/in/racheljmullen/">Rachel Mullen</a>
+          |
+          <a href="https://www.linkedin.com/in/cassidywag/">Cassidy Wagner</a>
         </p>
-      </div>
+      </footer>
     </React.Fragment>
   );
 }

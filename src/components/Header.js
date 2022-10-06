@@ -4,9 +4,9 @@ import NavBar from "./NavBar";
 export default function Header({ user }) {
   return (
     <React.Fragment>
-      <header >
+      <header>
         <NavBar user={user} />
-      </header>
+        </header>
     </React.Fragment>
   );
 }

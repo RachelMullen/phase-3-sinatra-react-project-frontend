@@ -1,35 +1,34 @@
 import React, { useState } from "react";
 import PlaceCard from "./PlaceCard";
 import { v4 as uuid } from "uuid";
-import PlaceFull from './PlaceFull';
-
-
+import PlaceFull from "./PlaceFull";
 
 export default function PlaceList({ list, user }) {
-    let cards = [];
-    let name = Object.keys(list)
+  let cards = [];
+  let name = Object.keys(list);
 
+  const [currentPlace, setCurrentPlace] = useState(list[name][0]);
 
-    const [ currentPlace, setCurrentPlace ] = useState(list[name][0])
-
-    function generateList () {
-        if (list) {
-            cards = list[name].map(place => {
-                return (
-                    <PlaceCard place={place} setCurrentPlace={setCurrentPlace} key={uuid()} />
-                )
-            })
-        }
+  function generateList() {
+    if (list) {
+      cards = list[name].map((place) => {
+        return (
+          <PlaceCard
+            place={place}
+            setCurrentPlace={setCurrentPlace}
+            key={uuid()}
+          />
+        );
+      });
     }
+  }
 
-    generateList();
+  generateList();
 
-
-
-    return (
-        <div id="go-place-list">
-            {cards}
-            <PlaceFull place={currentPlace}/>
-        </div>
-    )
+  return (
+    <div id="go-place-list">
+      {cards}
+      <PlaceFull place={currentPlace} />
+    </div>
+  );
 }
