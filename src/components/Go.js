@@ -10,7 +10,8 @@ import Comment from "./Comment";
 
 export default function Go({ user, currentGame, setCurrentGame }) {
   const [ isLoggedOut, setisLoggedOut ] = useState(false)
-  const [ redirect , setRedirect ] = useState("") 
+  const [ redirect , setRedirect ] = useState("")
+  const [ isSelecting, setIsSelecting ] = useState(true)
 
   return (
     <React.Fragment>
@@ -24,9 +25,10 @@ export default function Go({ user, currentGame, setCurrentGame }) {
 
       {/* pop-up choose game */}
       { user && user[2]["in_progress"].length > 1 ? 
-      <Dialog open={!currentGame}>
+      <Dialog open={isSelecting} onClose={() => setIsSelecting(false)}>
         <DialogTitle>Please Select A Hunt</DialogTitle>
         <HuntList container={"go"} list={user[2]["in_progress"]} setCurrentGame={setCurrentGame}/>
+        <Button onClick={() => setIsSelecting(false)}>Go!</Button>
       </Dialog>
       :
       <Dialog open={true} onClose={() => setRedirect("explore")}>

@@ -18,17 +18,6 @@ import "../index.css";
 export default function App() {
   const [user, setUser ] = useState();
   const [ currentGame, setCurrentGame ] = useState();
-  const [ reload, setReload ] = useState(false);
-
-  useEffect(() => {
-    if (user) {
-      fetch(`http://localhost:9292/users/${user.username}/${user.password}`)
-        .then((resp) => resp.json())
-        .then((data) => {
-          setUser(data);
-        });
-    }
-  },[reload])
 
   return (
     <div>
@@ -38,7 +27,7 @@ export default function App() {
           <Create />
         </Route>
         <Route exact path="/explore">
-          <Explore setReload={setReload} setCurrentGame={setCurrentGame} user={user} />
+          <Explore setCurrentGame={setCurrentGame} user={user} />
         </Route>
         <Route exact path="/go">
           <Go
