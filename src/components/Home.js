@@ -109,7 +109,7 @@ export default function Home({ setUser, user }) {
           </strong>
         </p>
       </div>
-      {user ? <Redirect to="/go" /> : null}
+      {user ? <Redirect to="/explore" /> : null}
     </React.Fragment>
   );
 }

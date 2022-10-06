@@ -5,6 +5,7 @@ import {
   LoadScript,
   Marker,
 } from "@react-google-maps/api";
+import { v4 as uuid } from "uuid";
 
 export default function Map({ list }) {
   const [pinArray, setPinArray] = useState([]);
@@ -90,6 +91,7 @@ export default function Map({ list }) {
     zoomControls: true,
   };
 
+  // console.log(pinArray);
 
   return (
     <div id="mapContainer">
@@ -109,7 +111,7 @@ export default function Map({ list }) {
           {pinArray.map((visit) => (
             <Marker
               id="marker"
-              key={visit.id}
+              key={uuid()}
               position={{
                 lat: parseFloat(visit.latitude),
                 lng: parseFloat(visit.longitude),
