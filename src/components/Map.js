@@ -7,67 +7,38 @@ import {
 } from "@react-google-maps/api";
 import { v4 as uuid } from "uuid";
 
-export default function Map({ list }) {
-  const [pinArray, setPinArray] = useState([]);
+export default function Map({ pinArray, center }) {
 
-  useEffect(() => setPinArray(grabAllCoordinates()), [list]);
+  console.log("center is")
+  console.log(center)
+  // const [pinArray, setPinArray] = useState([]);
 
-  function grabAllCoordinates() {
-    if (list) {
-      console.log("attempting to parse list of places")
-      console.log(list)
-      let staging = [];
-      let name = Object.keys(list);
-      list[name].map((place) => {
-        staging.push({
-          latitude: `${place[0].place.latitude}`,
-          longitude: `${place[0].place.longitude}`,
-          complete: `${place[1].linked_visit[0].complete}`,
-          favorite: `${place[1].linked_visit[0].favorite}`,
-          wishlist: `${place[1].linked_visit[0].wishlist}`,
-          avoid: `${place[1].linked_visit[0].avoid}`,
-        });
-      });
-      return staging;
-    }
-  }
+  // useEffect(() => setPinArray(grabAllCoordinates()), [list]);
 
-//   let trip = [
-//     {
-//         latitude: 39.7382,
-//         longitude: -104.9902,
-//         complete: false,
-//         favorite: false,
-//         wishlist: false,
-//         avoid: true
-//     },
-//     {
-//         latitude: 39.7392,
-//         longitude: -104.9922,
-//         complete: false,
-//         favorite: true,
-//         wishlist: false,
-//         avoid: true
-//     },
-//     {
-//         latitude: 39.7372,
-//         longitude: -104.9912,
-//         complete: false,
-//         favorite: true,
-//         wishlist: false,
-//         avoid: false
-//     }
-// ]
+  // function grabAllCoordinates() {
+  //   if (list) {
+  //     console.log("attempting to parse list of places")
+  //     console.log(list)
+  //     let staging = [];
+  //     let name = Object.keys(list);
+  //     list[name].map((place) => {
+  //       staging.push({
+  //         latitude: `${place[0].place.latitude}`,
+  //         longitude: `${place[0].place.longitude}`,
+  //         complete: `${place[1].linked_visit[0].complete}`,
+  //         favorite: `${place[1].linked_visit[0].favorite}`,
+  //         wishlist: `${place[1].linked_visit[0].wishlist}`,
+  //         avoid: `${place[1].linked_visit[0].avoid}`,
+  //       });
+  //     });
+  //     return staging;
+  //   }
+  // }
 
-  // handles the view region
-  const [center, setCenter] = useState({
-    lat: 39.7392,
-    lng: -104.9902,
-  });
 
-  // handles what icon appears
+  //THIS FUCKING STAYS HERE MATE. SHE DOESNT GO.
   function determineIcon(visit) {
-    console.log(visit);
+    // console.log(visit);
     if (visit.avoid == true) {
       return "http://maps.google.com/mapfiles/ms/icons/red-dot.png";
     } else if (visit.favorite == true) {
@@ -79,8 +50,8 @@ export default function Map({ list }) {
     }
   }
 
-  console.log("console logging pinArray");
-  console.log(pinArray);
+  // console.log("console logging pinArray");
+  // console.log(pinArray);
 
   const containerStyle = {
     height: "90vh",
@@ -91,8 +62,6 @@ export default function Map({ list }) {
     disableDefaultUI: true,
     zoomControls: true,
   };
-
-  // console.log(pinArray);
 
   return (
     <div id="mapContainer">
