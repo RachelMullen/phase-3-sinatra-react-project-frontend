@@ -8,10 +8,13 @@ export default function NavBar({ user }) {
   return (
     <React.Fragment>
       <div className="navBar">
+
+        { user ?
         <NavLink to="/create" button className='navLink'>
             <AddCircle sx={{ verticalAlign: "middle", paddingBottom: "3px" }} />
             CREATE
         </NavLink>
+        : null }
 
         <NavLink to="/explore" button className='navLink'>
         <Explore sx={{ verticalAlign: "middle", paddingBottom: "3px" }} />
@@ -19,11 +22,13 @@ export default function NavBar({ user }) {
         </NavLink>
 
         <img src={UpQuest} alt="Logo" width="200px"/>
-        
+
+        { user ?
         <NavLink to="/go" button className='navLink'>
         <PinDrop sx={{ verticalAlign: "middle", paddingBottom: "3px" }} />
           GO
         </NavLink>
+        : null }
 
         { !user ?
         <NavLink to="/login" button className='navLink'>

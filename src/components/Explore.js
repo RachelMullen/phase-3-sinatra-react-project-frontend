@@ -24,7 +24,7 @@ export default function Explore({ user, setUser, setCurrentGame }) {
 
   return (
     <React.Fragment>
-      <h1>Choose a Quest!</h1>
+      <h1 id="choose-quest">Choose a Quest!</h1>
       <HuntList setUser={setUser} setCurrentGame={setCurrentGame} user={user} container={"explore"} list={publicHunts}/>
       <Map />
 

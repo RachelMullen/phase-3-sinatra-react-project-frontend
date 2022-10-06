@@ -19,6 +19,8 @@ export default function App() {
   return (
     <div>
       <Header user={user} />
+      <br />
+      <br />
       <Switch>
         <Route exact path="/create">
           <Create />
@@ -39,6 +41,15 @@ export default function App() {
           <Dashboard user={user}/>
         </Route>
       </Switch>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       <Footer />
     </div>
   );

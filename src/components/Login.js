@@ -43,6 +43,14 @@ export default function Login({ user, setUser }) {
           <input type="submit" />
         </div>
       </form>
+      <p>
+        <br />
+          Need to create an account?{" "}
+          <br />
+          <strong>
+            <a href="http://localhost:3000/login">Sign Up</a>
+          </strong>
+        </p>
     </div>
   );
 

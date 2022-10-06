@@ -40,7 +40,7 @@ export default function HuntCard({ setUser, user, hunt, setCurrentGame, containe
 
   return (
     <div className="single-hunt">
-      <p onClick={() => handleClick()}>{Object.keys(hunt)}</p>
+      <p onClick={() => handleClick()}><span>{Object.keys(hunt)}</span></p>
       {redirect === "go" ? <Redirect to="/go" /> : null}
       {redirect === "home" ? <Redirect to="/" /> : null}
     </div>

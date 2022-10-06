@@ -116,3 +116,28 @@ input[type="submit"]:hover {
 #mapContainer {
   width: 70%;
 }
+
+.single-hunt {
+  position: relative;
+  right: 0;
+  left: 0;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 3rem;
+  scale: .95;
+  border-style: solid;
+  border-radius: .3rem;
+  border-width: .1rem;
+  width: fit-content;
+  white-space: nowrap;
+}
+
+.single-hunt:hover {
+  color: rgb(99, 158, 99);
+  text-shadow: 0 0 10px rgb(74, 174, 121);
+  scale: 1;
+}
+
+#choose-quest {
+  font-size: 3rem;
+}
