@@ -47,6 +47,6 @@ export default function Go({ user, currentGame, setCurrentGame }) {
       {isLoggedOut ? <Redirect to="/" /> : null}
       {redirect == "explore" ? <Redirect to="/explore" /> : null}
       
-    </>
+    </React.Fragment>
   );
 }
