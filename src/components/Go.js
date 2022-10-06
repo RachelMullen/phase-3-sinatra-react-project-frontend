@@ -23,14 +23,14 @@ export default function Go({ user, currentGame, setCurrentGame }) {
       </Dialog>
 
       {/* pop-up choose game */}
-      { user[2]["in_progress"].length > 1 ? 
+      { user && user[2]["in_progress"].length > 1 ? 
       <Dialog open={!currentGame}>
         <DialogTitle>Please Select A Hunt</DialogTitle>
         <HuntList container={"go"} list={user[2]["in_progress"]} setCurrentGame={setCurrentGame}/>
       </Dialog>
       :
       <Dialog open={true} onClose={() => setRedirect("explore")}>
-        <DialogTitle>Please Visit The Explore Or Create Page</DialogTitle>
+        <DialogTitle>YOU AREN'T ON ANY QUESTS!! Please Visit The Explore Or Create Page</DialogTitle>
         <DialogContent>
           <img src={Squirtle}></img>
         </DialogContent>
@@ -46,6 +46,7 @@ export default function Go({ user, currentGame, setCurrentGame }) {
 
       {isLoggedOut ? <Redirect to="/" /> : null}
       {redirect == "explore" ? <Redirect to="/explore" /> : null}
-      </React.Fragment>
+      
+    </>
   );
 }
