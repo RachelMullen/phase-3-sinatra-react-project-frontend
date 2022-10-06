@@ -34,7 +34,7 @@ export default function Go({ user, currentGame, setCurrentGame }) {
       </Dialog>
 
       {/* pop-up choose game */}
-      { user && user[2]["in_progress"].length > 1 ? 
+      { user ? 
       <Dialog open={isSelecting} onClose={() => setIsSelecting(false)}>
         <DialogTitle>Please Select A Hunt</DialogTitle>
         <HuntList container={"go"} list={user[2]["in_progress"]} setCurrentGame={setCurrentGame}/>
