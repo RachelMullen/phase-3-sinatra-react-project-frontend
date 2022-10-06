@@ -44,7 +44,8 @@ export default function Go({ user, currentGame, setCurrentGame }) {
       <Dialog open={true} onClose={() => setRedirect("explore")}>
         <DialogTitle>No Active Quests</DialogTitle>
         <DialogContent>
-          <img src={Squirtle}></img>
+          <img src={Squirtle}></img><br />
+          Go explore, then make an account.
         </DialogContent>
       </Dialog>
       }
