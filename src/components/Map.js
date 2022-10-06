@@ -9,31 +9,8 @@ import { v4 as uuid } from "uuid";
 
 export default function Map({ pinArray, center }) {
 
-  console.log("center is")
-  console.log(center)
-  // const [pinArray, setPinArray] = useState([]);
-
-  // useEffect(() => setPinArray(grabAllCoordinates()), [list]);
-
-  // function grabAllCoordinates() {
-  //   if (list) {
-  //     console.log("attempting to parse list of places")
-  //     console.log(list)
-  //     let staging = [];
-  //     let name = Object.keys(list);
-  //     list[name].map((place) => {
-  //       staging.push({
-  //         latitude: `${place[0].place.latitude}`,
-  //         longitude: `${place[0].place.longitude}`,
-  //         complete: `${place[1].linked_visit[0].complete}`,
-  //         favorite: `${place[1].linked_visit[0].favorite}`,
-  //         wishlist: `${place[1].linked_visit[0].wishlist}`,
-  //         avoid: `${place[1].linked_visit[0].avoid}`,
-  //       });
-  //     });
-  //     return staging;
-  //   }
-  // }
+  // console.log("center is")
+  // console.log(center)
 
 
   //THIS FUCKING STAYS HERE MATE. SHE DOESNT GO.

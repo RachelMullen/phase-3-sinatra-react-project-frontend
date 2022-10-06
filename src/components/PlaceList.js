@@ -29,7 +29,7 @@ export default function PlaceList({ list, user }) {
     return (
         <div id="go-place-list">
             {cards}
-            <PlaceFull place={currentPlace}/>
+            <PlaceFull user={user} place={currentPlace}/>
         </div>
     )
 }

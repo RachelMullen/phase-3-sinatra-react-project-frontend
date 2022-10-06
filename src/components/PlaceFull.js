@@ -3,7 +3,7 @@ import { v4 as uuid } from "uuid";
 import Comment from "./Comment";
 
 
-export default function PlaceFull({ place }) {
+export default function PlaceFull({ place, user }) {
 const [ isVisited, setIsVisited ] = useState(place[1].linked_visit[0].complete)
 
     const comments = place[0].comments.map(comment => {
@@ -16,10 +16,10 @@ const [ isVisited, setIsVisited ] = useState(place[1].linked_visit[0].complete)
     })
 
     // console.log(place[1].linked_visit[0].complete)
-    console.log(place[1].linked_visit[0])
+    // console.log(place[1].linked_visit[0])
 
     function handleVisit() {
-        console.log("visit click")
+        // console.log("visit click")
         setIsVisited(() => !isVisited)
         let patchObj = {
             complete: isVisited
