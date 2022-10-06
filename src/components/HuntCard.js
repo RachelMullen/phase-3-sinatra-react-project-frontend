@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 
-export default function HuntCard({ setUser, user, hunt, setCurrentGame, container }) {
+export default function HuntCard({ title, setTitle, setUser, user, hunt, setCurrentGame, container }) {
   const [redirect, setRedirect] = useState("");
 
   let name = Object.keys(hunt);
@@ -12,8 +12,9 @@ export default function HuntCard({ setUser, user, hunt, setCurrentGame, containe
   function handleClick() {
     if (container === "go") {
       console.log("click from go page");
-      // sets current game
       setCurrentGame(hunt);
+      setTitle(name);
+      console.log("setting title to " + name);
     } else if (container === "explore" && user) {
       console.log("click from explore page");
       fetch(`http://localhost:9292/${user[0].id}/${hunt[name].id}/start`)

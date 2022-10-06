@@ -1,21 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 import Button from "@mui/material/Button";
-import Grid2 from "@mui/material/Unstable_Grid2";
-import Typography from "@mui/material/Typography";
-import Paper from "@mui/material/Paper";
-import PaperContent from "@mui/material/CardContent";
-import Container from "@mui/material/Container";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
-import DialogActions from "@mui/material/DialogActions";
-import TextField from "@mui/material/TextField";
-import Squirtle from '../assets/squirtle.png';
-import Map from './Map';
-import PlaceList from './PlaceList';
-import HuntList from './HuntList';
+import Squirtle from "../assets/squirtle.png";
+import Map from "./Map";
+import PlaceList from "./PlaceList";
+import HuntList from "./HuntList";
 
 
 export default function Go({ user, currentGame, setCurrentGame }) {
@@ -23,11 +15,11 @@ export default function Go({ user, currentGame, setCurrentGame }) {
   const [ redirect , setRedirect ] = useState("")
   const [ isSelecting, setIsSelecting ] = useState(true)
   const [pinArray, setPinArray] = useState([]);
+  const [ title , setTitle ] = useState();
   const [center, setCenter] = useState({
     lat: 39.7392,
     lng: -104.9902,
   });
-
 
 
   useEffect(() => setPinArray(grabAllCoordinates()), [currentGame]);
@@ -63,6 +55,7 @@ export default function Go({ user, currentGame, setCurrentGame }) {
 
   return (
     <>
+    {/* POPUPS */}
       {/* redirect sign in */}
       <Dialog open={!user} onClose={() => setisLoggedOut(true)}>
         <DialogTitle>Please Log In Or Make An Account</DialogTitle>
@@ -75,7 +68,7 @@ export default function Go({ user, currentGame, setCurrentGame }) {
       { user ? 
       <Dialog open={isSelecting} onClose={() => setIsSelecting(false)}>
         <DialogTitle>Please Select A Hunt</DialogTitle>
-        <HuntList container={"go"} list={user[2]["in_progress"]} setCurrentGame={setCurrentGame}/>
+        <HuntList title={title} setTitle={setTitle} container={"go"} list={user[2]["in_progress"]} setCurrentGame={setCurrentGame}/>
         <Button onClick={() => setIsSelecting(false)}>Go!</Button>
       </Dialog>
       :
@@ -88,9 +81,30 @@ export default function Go({ user, currentGame, setCurrentGame }) {
       </Dialog>
       }
 
-      {currentGame ? <PlaceList user={user} list={currentGame}/> : null}
-      {currentGame ? <Map center={center} pinArray={pinArray} list={currentGame}/> : null}
+      <div className="flexContainer">
+        <div className="row">
+          <div className="column">
+            <div>
+              <h2>{title}</h2>
+              {currentGame ? <PlaceList user={user} list={currentGame}/> : null}
+            </div>
+          </div>
+          <div className="double-column">
+            <div>
+              TITLE OF HUNT THIS IS WHERE THE PLACE DETAILS GO
+              {/* <br />
+              <button>EDIT/SAVE</button> */}
+            </div>
+          </div>
+          <div className="column">
+            <div>
+              {currentGame ? <Map center={center} pinArray={pinArray} list={currentGame}/> : null}
+            </div>
+          </div>
+        </div>
+      </div>
 
+      {/* REDIRECTS */}
       {isLoggedOut ? <Redirect to="/" /> : null}
       {redirect == "explore" ? <Redirect to="/explore" /> : null}
       

@@ -52,15 +52,6 @@ export default function Explore({ user, setUser, setCurrentGame }) {
       <br />
       <br />
       <br />
-      <Container sx={{ flexGrow: 1 }}>
-          <Grid2 xs={12} sm={6}>
-            <Button variant="contained">EDIT/SAVE</Button>
-          </Grid2>
-      </Container>
-      <div>
-        <br />
-        <Button variant="contained">PUBLISH & GO!</Button>
-      </div>
     </React.Fragment>
   );
 }

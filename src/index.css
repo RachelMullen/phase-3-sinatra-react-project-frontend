@@ -1,20 +1,42 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/*color pallete
+#F9E830 (yellow)
+#FFFFFF (White)
+#26D986 (green)
+#ff0057 (Red)
+#6600FF (Purple)
+*/
 
 * {
   box-sizing: border-box;
   margin: 0;
   font-family: "Roboto", sans-serif;
   padding: 0;
+  vertical-align: baseline;
+  border: 0;
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 a {
   text-decoration: none;
+  margin-right: 10px;
+  margin-left: 10px;
+  outline: 0;
+  cursor: pointer;
 }
 
 a:hover {
-  color: rgb(12, 1, 12);
+  color: #f9e830;
+  transition: all 0.3s ease;
+}
+
+a:active {
+  color: rgb(244, 13, 21);
 }
 
 body {
@@ -27,36 +49,108 @@ body {
   align-items: center;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 10px;
+}
+
 h1 {
   font-size: 50px;
-  margin-top: 100px;
+}
+
+h2 {
+  font-size: 40px;
 }
 
 p {
   font-size: 15px;
-  width: 40%;
-  margin-left: 30%;
-
 }
 
-.navLink {
-  height: auto;
-  text-decoration: none;
-  background: #6600ff;
-  color: white;
-  box-shadow: 0 4px 8px rgb(10 22 70 / 15%);
-  padding: 15px;
+.flexContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  flex-basis: auto;
+  /* box-shadow: 0 4px 8px rgb(10 22 70 / 15%); */
   margin: 25px;
+  padding: 10px;
+}
+
+.column {
+  display: flex;
+  /* box-shadow: 0 4px 8px rgb(10 22 70 / 15%); */
+  margin: auto;
+  flex-direction: column;
+  align-self: auto;
+  height: 300px;
+  border-radius: 10px;
+  padding: 10px;
+  /* background-color: rgb(121, 121, 152); */
+}
+
+.double-column {
+  display: flex;
+  padding: 10px;
+  align-self: auto;
+  flex-direction: column;
+  padding: 10px;
+  /* background: #6600ff; */
+  height: 300px;
   border-radius: 10px;
 }
 
-.navlink :hover {
-  color: green;
+.row {
+  display: flex;
+  flex-direction: row;
+  align-self: auto;
+  flex-wrap: wrap;
+  width: 100%;
+  align-content: flex-start;
+  gap: 30px;
+  justify-content: space-evenly;
+}
+
+#single-place {
+  background-color: white;
+}
+
+.navLink {
+  display: inline-block;
+  /* height: auto; */
+  /* flex-basis: auto; */
+  background: #6600ff;
+  color: white;
+  box-shadow: 0 4px 8px rgb(10 22 70 / 15%);
+  padding: 12px;
+  margin: 0 6px 6px 10px;
+  border-radius: 10px;
+  width: 120px;
+  font-weight: 700;
+  font-size: 1rem;
 }
 
 .navBar {
   display: flex;
-  justify-content: center;
+  list-style-type: none;
+  /* align-items: flex-start; */
+  flex-wrap: wrap;
+  /* flex: 1; */
+  /* row-gap: 10px; */
+  flex-direction: row;
+  /* align-content: center; */
+  justify-content: space-evenly;
+  align-items: center;
+  padding-bottom: 40px;
+  padding-top: 10px;
+  transition: all 0.3s ease;
+  transform: scale(.9)
 }
 
 .app {
@@ -90,13 +184,42 @@ input[type="submit"]:hover {
   justify-content: center;
 }
 
-.list-container {
+button {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  display: inline-block;
+  background: #6600ff;
+  color: white;
+  box-shadow: 0 4px 8px rgb(10 22 70 / 15%);
+  margin: 0 6px 6px 10px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
-.error {
-  color: red;
-  font-size: 12px;
+.medium-button {
+  font-weight: 700;
+  font-size: 1.5rem;
+  background-color: #6600ff;
+}
+
+.large-button {
+  font-weight: 700;
+  font-size: 2rem;
+  background-color: rgb(244, 13, 21);
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.346);
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.list-container {
+  display: flex;
 }
 
 .title {
@@ -112,7 +235,57 @@ input[type="submit"]:hover {
   height: 1px;
 }
 
-
 #mapContainer {
   width: 70%;
+  position: absolute;
+  left: -32%;
+  top: 12%;
+  width: 100%;
+  z-index: -1;
+}
+
+footer {
+  position: fixed;
+  /* left: 0; */
+  display: flex;
+  bottom: 0;
+  width: 100%;
+  padding: 25px;
+  background-color: #6600ff;
+  color: white;
+  align-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+footer a {
+  color: white;
+}
+
+header {
+  background-color: white;
+  width: 100%;
+  align-items: center;
+}
+/* 
+img {
+  display: block;
+  max-width: 50%;
+  height: auto;
+} */
+
+div {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
+
+@media screen and (min-width: 800px) {
+  .column {
+    flex: 1;
+  }
+
+  .double-column {
+    flex: 2;
+  }
 }
