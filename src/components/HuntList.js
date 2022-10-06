@@ -16,9 +16,15 @@ export default function HuntList({ user, list, setCurrentGame, container }) {
             })
         }
     }
-  }
 
-  generateList();
+    generateList();
 
-  return <>{cards}</>;
+
+
+    return (
+        <>
+            {cards}
+        </>
+    )
+
 }

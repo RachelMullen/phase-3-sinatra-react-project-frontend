@@ -13,6 +13,12 @@ import {
   Box,
 } from "@mui/material";
 import GoogleMapTA from "../assets/GoogleMapTA.jpg";
+// import Comment from "./Comment";
+// import HuntCard from ".HuntCard";
+// import HuntList from ".HuntList";
+// import PlaceCard from ".PlaceCard";
+// import PlaceList from ".PlaceList";
+// import PlaceFull from ".PlaceFull";
 
 export default function Create() {
   const [open, setOpen] = useState(false);
@@ -70,27 +76,24 @@ export default function Create() {
       <div class="flexContainer">
         <div className="flexItemSmall">
           <div>
-          <h2>PLACES IN HUNT</h2>
-          <ul>
-            <li>
-              Blah blah blah
-            </li>
+            <h2>PLACES IN HUNT</h2>
+            <ul>
+              <li>Blah blah blah</li>
             </ul>
           </div>
         </div>
         <div className="flexItemLarge">
-        <div>
-          <h2>TITLE OF HUNT</h2>
-          <p>THIS IS WHERE THE PLACE DETAILS GO</p>
-          <br/>
+          <div>
+            <h2>TITLE OF HUNT</h2>
+            <p>THIS IS WHERE THE PLACE DETAILS GO</p>
+            <br />
             <button>EDIT/SAVE</button>
-            </div>
+          </div>
         </div>
         <div className="flexItemSmall">
           <div>
-        <img src={GoogleMapTA} alt="Logo" max-width="100%"
-              height="100px" />
-            </div>
+            <img src={GoogleMapTA} alt="Logo" max-width="100%" height="100px" />
+          </div>
         </div>
       </div>
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Button from "@mui/material/Button";
-import Grid2 from "@mui/material/Unstable_Grid2";
+import Grid from "@mui/material/Unstable_Grid2";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import PaperContent from "@mui/material/CardContent";
@@ -27,6 +27,14 @@ export default function Explore({ user, setCurrentGame }) {
       <HuntList setCurrentGame={setCurrentGame} user={user} container={"explore"} list={publicHunts}/>
       <Map />
 
+
+
+
+
+
+
+
+
       <br />
       <br />
       <br />
@@ -50,12 +58,14 @@ export default function Explore({ user, setCurrentGame }) {
       <br />
       <br />
       <br />
-        <Grid xs={12} sm={6}>
-          <button variant="contained">EDIT/SAVE</button>
-        </Grid>
+      <Container sx={{ flexGrow: 1 }}>
+          <Grid xs={12} sm={6}>
+            <Button variant="contained">EDIT/SAVE</Button>
+          </Grid>
+      </Container>
       <div>
         <br />
-        <button className="large-button">PUBLISH & GO!</button>
+        <Button variant="contained">PUBLISH & GO!</Button>
       </div>
     </React.Fragment>
   );

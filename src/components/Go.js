@@ -44,9 +44,8 @@ export default function Go({ user, currentGame, setCurrentGame }) {
       {currentGame ? <PlaceList user={user} list={currentGame}/> : null}
       {currentGame ? <Map list={currentGame}/> : null}
 
-        </div>
       {isLoggedOut ? <Redirect to="/" /> : null}
       {redirect == "explore" ? <Redirect to="/explore" /> : null}
-    </>
+      </React.Fragment>
   );
 }

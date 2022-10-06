@@ -5,10 +5,7 @@ import {
   LoadScript,
   Marker,
 } from "@react-google-maps/api";
-<<<<<<< HEAD
-=======
 import { v4 as uuid } from "uuid";
->>>>>>> 748dc20d41eb6c1c856e57949f365634cffb7746
 
 export default function Map({ list }) {
   const [pinArray, setPinArray] = useState([]);
