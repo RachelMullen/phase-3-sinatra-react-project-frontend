@@ -16,7 +16,7 @@ export default function HuntCard({ user, hunt, setCurrentGame, container }) {
             console.log("click from go page");
             // sets current game
             setCurrentGame(hunt)
-        } else if (container === "explore") {
+        } else if (container === "explore" && user) {
             console.log("click from explore page");
             fetch(`http://localhost:9292/${user[0].id}/${hunt[name].id}/start`)
             .then(resp => resp.json())
@@ -24,6 +24,9 @@ export default function HuntCard({ user, hunt, setCurrentGame, container }) {
                 setCurrentGame(data);
                 setRedirect("go");
             });
+        } else if (container === "explore" && !user) {
+            alert("Please log in to start a quest!")
+            setRedirect("home")
         }
     }
 
@@ -32,6 +35,7 @@ export default function HuntCard({ user, hunt, setCurrentGame, container }) {
         <div className="single-hunt">
             <p onClick={() => handleClick()}>{Object.keys(hunt)}</p>
             {redirect === "go" ? <Redirect to="/go" /> : null}
+            {redirect === "home" ? <Redirect to="/" /> : null}
         </div>
     )
 }

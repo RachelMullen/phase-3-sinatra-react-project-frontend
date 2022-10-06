@@ -42,17 +42,13 @@ export default function Go({ user, currentGame, setCurrentGame }) {
       </Dialog>
       :
       <Dialog open={true} onClose={() => setRedirect("explore")}>
-        <DialogTitle>YOU AREN'T ON ANY QUESTS!! Please Visit The Explore Or Create Page</DialogTitle>
+        <DialogTitle>No Active Quests</DialogTitle>
         <DialogContent>
           <img src={Squirtle}></img>
         </DialogContent>
       </Dialog>
       }
 
-
-      {/* {user ? (<p style={{ color: "black" }}>Current User is {user[0].username}</p>) : null} */}
-      {/* {console.log("go huntlist:")}
-      {console.log(user[2]["in_progress"])} */}
       {currentGame ? <PlaceList user={user} list={currentGame}/> : null}
       {currentGame ? <Map list={currentGame}/> : null}
 
