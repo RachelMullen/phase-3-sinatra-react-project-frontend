@@ -88,7 +88,6 @@ p {
   /* box-shadow: 0 4px 8px rgb(10 22 70 / 15%); */
   margin: auto;
   flex-direction: column;
-  flex: 1;
   align-self: auto;
   height: 300px;
   border-radius: 10px;
@@ -101,12 +100,10 @@ p {
   padding: 10px;
   align-self: auto;
   flex-direction: column;
-  flex: 2;
   padding: 10px;
   /* background: #6600ff; */
   height: 300px;
   border-radius: 10px;
-  color: white;
 }
 
 .row {
