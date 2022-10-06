@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
-import {
-Container
-} from "@mui/material";
+import { Container } from "@mui/material";
 
 import Header from "./Header";
 import Create from "./Create";
@@ -16,8 +14,8 @@ import Dashboard from "./Dashboard";
 import "../index.css";
 
 export default function App() {
-  const [user, setUser ] = useState();
-  const [ currentGame, setCurrentGame ] = useState();
+  const [user, setUser] = useState();
+  const [currentGame, setCurrentGame] = useState();
 
   return (
     <div>
@@ -27,7 +25,11 @@ export default function App() {
           <Create />
         </Route>
         <Route exact path="/explore">
-          <Explore setCurrentGame={setCurrentGame} user={user} />
+          <Explore
+            setCurrentGame={setCurrentGame}
+            user={user}
+            setUser={setUser}
+          />
         </Route>
         <Route exact path="/go">
           <Go
@@ -45,7 +47,7 @@ export default function App() {
         <Route exact path="/dashboard">
           <Dashboard user={user} />
         </Route>
-        </Switch>
+      </Switch>
       <Footer />
     </div>
   );

@@ -39,8 +39,8 @@ export default function Login({ user, setUser }) {
             onChange={(e) => setUserInput([userInput[0], e.target.value])}
           />
         </div>
-        <div className="button-container">
-          <input type="submit" />
+        <div>
+          <input type="SUBMIT" />
         </div>
       </form>
     </div>
@@ -49,8 +49,8 @@ export default function Login({ user, setUser }) {
   return (
     <React.Fragment>
       <div className="app">
-        <div className="login-form">
-          <div className="title">Sign In</div>
+        <div>
+          <div className="title">SIGN IN</div>
           {renderForm}
         </div>
       </div>

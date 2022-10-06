@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Button from "@mui/material/Button";
-import Grid from "@mui/material/Unstable_Grid2";
+import Grid2 from "@mui/material/Unstable_Grid2";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import PaperContent from "@mui/material/CardContent";
@@ -9,7 +9,7 @@ import { Link } from "@mui/material";
 import Map from './Map';
 import HuntList from './HuntList';
 
-export default function Explore({ user, setCurrentGame }) {
+export default function Explore({ user, setUser, setCurrentGame }) {
   const [ publicHunts, setPublicHunts ] = useState();
 
   useEffect(() => {
@@ -24,43 +24,9 @@ export default function Explore({ user, setCurrentGame }) {
 
   return (
     <React.Fragment>
-      <h1>Choose a Quest!</h1>
-      <HuntList setCurrentGame={setCurrentGame} user={user} container={"explore"} list={publicHunts}/>
+      <h1>CHOOSE A QUEST!</h1>
+      <HuntList setUser={setUser} setCurrentGame={setCurrentGame} user={user} container={"explore"} list={publicHunts}/>
       <Map />
-
-
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <Container sx={{ flexGrow: 1 }}>
-          <Grid xs={12} sm={6}>
-            <Button variant="contained">EDIT/SAVE</Button>
-          </Grid>
-      </Container>
-      <div>
-        <br />
-        <Button variant="contained">PUBLISH & GO!</Button>
-      </div>
     </React.Fragment>
   );
 }

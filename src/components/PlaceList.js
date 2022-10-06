@@ -26,9 +26,9 @@ export default function PlaceList({ list, user }) {
   generateList();
 
   return (
-    <div id="go-place-list">
+    <div className="go-place-list">
       {cards}
-      <PlaceFull place={currentPlace} />
+      <PlaceFull user={user} place={currentPlace} />
     </div>
   );
 }

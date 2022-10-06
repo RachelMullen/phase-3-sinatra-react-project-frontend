@@ -1,11 +1,13 @@
 import { Redirect } from "react-router-dom";
 import React, { useState } from "react";
+import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
+import Map from "../assets/Map.png";
 
 export default function Home({ setUser, user }) {
   const [userInput, setUserInput] = useState(["", "", ""]);
@@ -49,74 +51,76 @@ export default function Home({ setUser, user }) {
 
   return (
     <React.Fragment>
-      
-      <h1>Welcome trackies*,</h1>
-      <p>
-        <strong>Tracky</strong> is a one-stop shop to organize your experiences.
-        Save your favorite places, explore location collections, and track your
-        gallops all in one spot.
-      </p>
-
-      <div>
-        <button onClick={handleClickOpen}>SIGN UP</button>
-        <Dialog open={open} onClose={handleSignUp}>
-          <DialogTitle>SIGN UP</DialogTitle>
-          <DialogContent>
-            <DialogContentText>
-              Make an account and get galloping.
-            </DialogContentText>
-            <TextField
-              autoFocus
-              margin="dense"
-              id="username"
-              label="Username"
-              type="email"
-              fullWidth
-              variant="standard"
-              value={userInput[0]}
-              onChange={(e) =>
-                setUserInput([e.target.value, userInput[1], userInput[2]])
-              }
-            />
-            <TextField
-              margin="dense"
-              id="password1"
-              label="Password"
-              type="password"
-              fullWidth
-              variant="standard"
-              value={userInput[1]}
-              onChange={(e) =>
-                setUserInput([userInput[0], e.target.value, userInput[2]])
-              }
-            />
-            <TextField
-              margin="dense"
-              id="password2"
-              label="Re-Enter Password"
-              type="password"
-              fullWidth
-              variant="standard"
-              value={userInput[2]}
-              onChange={(e) =>
-                setUserInput([userInput[0], userInput[1], e.target.value])
-              }
-            />
-          </DialogContent>
-          <DialogActions>
-            <button onClick={handleSignUp}>Sign Up</button>
-          </DialogActions>
-        </Dialog>
+      <div img src={ Map }>
       </div>
-      <div>
-        <p>
-          Already have an account?{" "}
-          <strong>
-            <a href="http://localhost:3000/login">Log In.</a>
-          </strong>
-        </p>
-      </div>
-      {user ? <Redirect to="/explore" /> : null}
+        <div>
+          <h1>Welcome trackies*,</h1>
+          <p>
+            <strong>UpQuest</strong> is a one-stop shop to organize your
+            experiences. Save your favorite places, explore location
+            collections, and track your gallops all in one spot.
+          </p>
+        </div>
+        <div>
+          <button className= "medium-button" onClick={handleClickOpen}>SIGN UP</button>
+          <Dialog open={open} onClose={handleSignUp}>
+            <DialogTitle>SIGN UP</DialogTitle>
+            <DialogContent>
+              <DialogContentText>
+                Make an account and get galloping.
+              </DialogContentText>
+              <TextField
+                autoFocus
+                margin="dense"
+                id="username"
+                label="Username"
+                type="email"
+                fullWidth
+                variant="standard"
+                value={userInput[0]}
+                onChange={(e) =>
+                  setUserInput([e.target.value, userInput[1], userInput[2]])
+                }
+              />
+              <TextField
+                margin="dense"
+                id="password1"
+                label="Password"
+                type="password"
+                fullWidth
+                variant="standard"
+                value={userInput[1]}
+                onChange={(e) =>
+                  setUserInput([userInput[0], e.target.value, userInput[2]])
+                }
+              />
+              <TextField
+                margin="dense"
+                id="password2"
+                label="Re-Enter Password"
+                type="password"
+                fullWidth
+                variant="standard"
+                value={userInput[2]}
+                onChange={(e) =>
+                  setUserInput([userInput[0], userInput[1], e.target.value])
+                }
+              />
+            </DialogContent>
+            <DialogActions>
+              <button onClick={handleSignUp}>SIGN UP</button>
+            </DialogActions>
+          </Dialog>
+        </div>
+        <div>
+          <p>
+            Already have an account?{" "}
+            <strong>
+              <a href="http://localhost:3000/login">Log In.</a>
+            </strong>
+          </p>
+        </div>
+        {user ? <Redirect to="/explore" /> : null}
     </React.Fragment>
   );
 }

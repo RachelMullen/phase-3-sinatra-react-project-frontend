@@ -61,6 +61,7 @@ p {
 
 h1 {
   font-size: 50px;
+  color: #6600ff;
 }
 
 h2 {
@@ -131,7 +132,7 @@ p {
   padding: 12px;
   margin: 0 6px 6px 10px;
   border-radius: 10px;
-  width: 110px;
+  width: 125px;
   font-weight: 700;
   font-size: 1rem;
 }
@@ -165,23 +166,31 @@ input[type="password"] {
 }
 
 input[type="submit"] {
-  margin-top: 1px;
-  cursor: pointer;
-  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  display: inline-block;
   background: #6600ff;
   color: white;
-  padding: 10px 20px;
+  box-shadow: 0 4px 8px rgb(10 22 70 / 15%);
+  margin: 0 6px 6px 10px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 input[type="submit"]:hover {
-  /* background: #080908; */
-  color: white;
+  background-color: rgba(0, 0, 0, 0.346);
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
 }
 
-.button-container {
+/* .button-container {
   display: flex;
   justify-content: center;
-}
+} */
 
 button {
   display: flex;
@@ -222,6 +231,7 @@ button:hover {
 }
 
 .title {
+  font-weight: 700;
   font-size: 45px;
   margin-bottom: 5px;
 }
@@ -268,6 +278,11 @@ img {
   height: auto;
 } */
 
+.go-place-list {
+  color:red
+}
+
+
 div {
   display: block;
   margin: auto;
@@ -283,3 +298,18 @@ div {
     flex: 2;
   }
 }
+
+.single-comment {
+  font-style: italic;
+}
+
+.single-hunt {
+font-weight: 700;
+cursor: pointer;
+}
+
+.single-hunt:hover {
+  cursor: pointer;
+  color: #6600ff;
+  transition: all 0.3s ease;
+  }
