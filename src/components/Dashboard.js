@@ -10,7 +10,7 @@ export default function Dashboard({ user }) {
       :
       <>
         <h1>{user[0].username}</h1>
-        <p>{user[0].locale}</p>
+        <p>📍 - {user[0].locale}</p>
         <p>{user[0].bio}</p>
         <h1>Score: {user[3].stats.score}{user[3].stats.score > 0 ? ", nice." : ", you fucking idiot."}</h1>
       </>

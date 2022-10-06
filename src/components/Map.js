@@ -74,7 +74,7 @@ export default function Map({ pinArray, center }) {
         <GoogleMap
           // onClick={recenter}
           mapContainerStyle={containerStyle}
-          zoom={13.5} //gotta come up with a formula for a dynamic zoom that adjusts every time a pin is placed
+          zoom={10} //gotta come up with a formula for a dynamic zoom that adjusts every time a pin is placed
           center={center}
           options={settings}
         >

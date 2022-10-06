@@ -12,6 +12,10 @@ export default function Login({ user, setUser }) {
       .then((data) => {
         setUser(data);
         setUserInput(["", ""]);
+      })
+      .catch((error) => {
+        alert("No user found (and probably)")
+        setUserInput(["", ""]);
       });
   }
 
