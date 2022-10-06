@@ -20,6 +20,7 @@ import HuntList from './HuntList';
 
 export default function Go({ user, currentGame, setCurrentGame }) {
   const [ isLoggedOut, setisLoggedOut ] = useState(false)
+  const [ redirect , setRedirect ] = useState("") 
 
   return (
     <>
@@ -32,12 +33,19 @@ export default function Go({ user, currentGame, setCurrentGame }) {
       </Dialog>
 
       {/* pop-up choose game */}
-      { user ? 
+      { user[2]["in_progress"].length > 1 ? 
       <Dialog open={!currentGame}>
         <DialogTitle>Please Select A Hunt</DialogTitle>
         <HuntList container={"go"} list={user[2]["in_progress"]} setCurrentGame={setCurrentGame}/>
       </Dialog>
-      : null}
+      :
+      <Dialog open={true} onClose={() => setRedirect("explore")}>
+        <DialogTitle>Please Visit The Explore Or Create Page</DialogTitle>
+        <DialogContent>
+          <img src={Squirtle}></img>
+        </DialogContent>
+      </Dialog>
+      }
 
 
       {/* {user ? (<p style={{ color: "black" }}>Current User is {user[0].username}</p>) : null} */}
@@ -47,6 +55,7 @@ export default function Go({ user, currentGame, setCurrentGame }) {
       <Map list={currentGame}/>
 
       {isLoggedOut ? <Redirect to="/" /> : null}
+      {redirect == "explore" ? <Redirect to="/explore" /> : null}
     </>
   );
 }
