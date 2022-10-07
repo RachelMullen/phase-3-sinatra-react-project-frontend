@@ -29,7 +29,7 @@ export default function App() {
           <Explore setCurrentGame={setCurrentGame} user={user} setUser={setUser}/>
         </Route>
         <Route exact path="/go">
-          <Go user={user} setCurrentGame={setCurrentGame} currentGame={currentGame} />
+          <Go setUser={setUser} user={user} setCurrentGame={setCurrentGame} currentGame={currentGame} />
         </Route>
         <Route exact path="/login">
           <Login user={user} setUser={setUser} />

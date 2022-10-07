@@ -5,7 +5,7 @@ import PlaceFull from './PlaceFull';
 
 
 
-export default function PlaceList({ list, user }) {
+export default function PlaceList({ setUser, list, user }) {
     let cards = [];
     let name = Object.keys(list)
 
@@ -29,7 +29,7 @@ export default function PlaceList({ list, user }) {
     return (
         <div id="go-place-list">
             {cards}
-            <PlaceFull user={user} place={currentPlace}/>
+            <PlaceFull setUser={setUser} user={user} place={currentPlace}/>
         </div>
     )
 }

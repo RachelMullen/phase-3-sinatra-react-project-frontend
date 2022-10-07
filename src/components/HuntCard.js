@@ -33,14 +33,14 @@ export default function HuntCard({ setUser, user, hunt, setCurrentGame, containe
           alert("No user found (and probably)");
         });
     } else if (container === "explore" && !user) {
-      alert("Please log in to start a quest!");
+      alert("Please make an account and then begin this quest.");
       setRedirect("home");
     }
   }
 
   return (
     <div className="single-hunt">
-      <p onClick={() => handleClick()}><span>{Object.keys(hunt)}</span></p>
+      <p onClick={() => handleClick()}><span className="single-line-text">{Object.keys(hunt)}</span></p>
       {redirect === "go" ? <Redirect to="/go" /> : null}
       {redirect === "home" ? <Redirect to="/" /> : null}
     </div>

@@ -18,7 +18,7 @@ import PlaceList from './PlaceList';
 import HuntList from './HuntList';
 
 
-export default function Go({ user, currentGame, setCurrentGame }) {
+export default function Go({ setUser, user, currentGame, setCurrentGame }) {
   const [ isLoggedOut, setisLoggedOut ] = useState(false)
   const [ redirect , setRedirect ] = useState("")
   const [ isSelecting, setIsSelecting ] = useState(true)
@@ -74,7 +74,7 @@ export default function Go({ user, currentGame, setCurrentGame }) {
       {/* pop-up choose game */}
       { user ? 
       <Dialog open={isSelecting} onClose={() => setIsSelecting(false)}>
-        <DialogTitle>Please Select A Hunt</DialogTitle>
+        <DialogTitle>Please Select An Active Quest:</DialogTitle>
         <HuntList container={"go"} list={user[2]["in_progress"]} setCurrentGame={setCurrentGame}/>
         <Button onClick={() => setIsSelecting(false)}>Go!</Button>
       </Dialog>
@@ -82,7 +82,7 @@ export default function Go({ user, currentGame, setCurrentGame }) {
       <Redirect to="/" />
       }
 
-      {currentGame ? <PlaceList user={user} list={currentGame}/> : null}
+      {currentGame ? <PlaceList setUser={setUser} user={user} list={currentGame}/> : null}
       {currentGame ? <Map center={center} pinArray={pinArray} list={currentGame}/> : null}
 
       {isLoggedOut ? <Redirect to="/" /> : null}

@@ -40,7 +40,7 @@ export default function Create() {
               autoFocus
               margin="dense"
               id="name"
-              label=" Name"
+              label="name"
               type="text"
               fullWidth
               variant="standard"
