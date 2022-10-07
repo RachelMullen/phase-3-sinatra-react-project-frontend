@@ -84,7 +84,7 @@ export default function Create({ user }) {
           />
           <br />
           <br />
-          <input type="submit" />
+          <input type="submit" value="Start!" />
         </form>
       ) : null}
 

@@ -9,7 +9,7 @@ import { Link } from "@mui/material";
 import Map from "./Map";
 import HuntList from "./HuntList";
 
-export default function Explore({ user, setUser, setCurrentGame }) {
+export default function Explore({ userHash, user, setUser, setCurrentGame }) {
   const [publicHunts, setPublicHunts] = useState();
 
   useEffect(() => {
@@ -28,6 +28,7 @@ export default function Explore({ user, setUser, setCurrentGame }) {
         <h1 id="choose-quest">Choose a Quest!</h1>
         <br />
         <HuntList
+          userHash={userHash}
           setUser={setUser}
           setCurrentGame={setCurrentGame}
           user={user}

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 
-export default function HuntCard({ setUser, user, hunt, setCurrentGame, container }) {
+export default function HuntCard({ userHash, setUser, user, hunt, setCurrentGame, container }) {
   const [redirect, setRedirect] = useState("");
 
   let name = Object.keys(hunt);
@@ -36,6 +36,8 @@ export default function HuntCard({ setUser, user, hunt, setCurrentGame, containe
           alert("No user found (and probably)");
         });
 
+        alert("You are ready to embark on this quest! and elliot would prefer it if this alert were replaced by an animation or a sound effect instead or something that communicates the same thing but not at the cost of user experience.")
+
 
         // THIS HAPPENS FROM THE EXPLORE PAGE
     } else if (container === "explore" && !user) {
@@ -46,11 +48,12 @@ export default function HuntCard({ setUser, user, hunt, setCurrentGame, containe
 
   console.log("logging hunt")
   console.log(hunt)
+  console.log(userHash)
 
   return (
     <div className="single-hunt">
       <p onClick={() => handleClick()}><span className="single-line-text">{name}</span></p>
-      <p className="author-text">{container == "explore" ? `by user ${hunt[name].user_id}` : null }</p>
+      <p className="author-text">{container == "explore" ? `by ${userHash[hunt[name].user_id]} - 📍 ${hunt[name].locale}` : null }</p>
       {redirect === "go" ? <Redirect to="/go" /> : null}
       {redirect === "home" ? <Redirect to="/" /> : null}
     </div>

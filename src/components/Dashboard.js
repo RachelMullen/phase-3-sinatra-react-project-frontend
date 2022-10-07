@@ -7,6 +7,7 @@ export default function Dashboard({ user }) {
   const [ userInput, setUserInput] = useState("");
   const [ isDestroyed, setIsDestroyed] = useState(false);
   const [ series, setSeries] = useState(0);
+  const [ logout , setLogout ] = useState(false);
 
   function handleUpdate() {
     let patchObj = {
@@ -53,7 +54,8 @@ export default function Dashboard({ user }) {
         <h1>Score: {user[3].stats.score}{user[3].stats.score > 0 ? ", nice." : ", you fucking idiot."}</h1>
         <br />
         <br />
-        <button onClick={() => setIsEditing(true)}>EDIT PROFILE</button>
+        <button onClick={() => setIsEditing(!isEditing)}>EDIT PROFILE</button>
+        <button onClick={() => setLogout(true)}>LOG OUT</button>
         {isEditing ?
         <div>
         <form onSubmit={handleUpdate}>
@@ -74,7 +76,7 @@ export default function Dashboard({ user }) {
       { series === 6 ? <button onClick={() => setSeries(7)}>Elliot may have generated this idea</button> : null}
       { series === 7 ? <button onClick={() => setSeries(8)}>No more advanced options</button> : null}
       { series === 8 ? <button onClick={() => deleteDatabase()}>Delete Entire Database</button> : null}
-      { isDestroyed ? <Redirect to="/" /> : null}
+      { logout ? <Redirect to="/" /> : null}
     </React.Fragment>
   );
 }
