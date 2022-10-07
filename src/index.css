@@ -365,7 +365,6 @@ div {
 
 .go-page {
   display: grid;
-  grid-template-columns: 25rem 25rem;
+  grid-template-columns: 30rem 30rem;
   grid-template-rows: 10rem 10rem;
-  padding-left: 20rem;
 }
