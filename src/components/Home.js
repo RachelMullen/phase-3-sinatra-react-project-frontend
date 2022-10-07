@@ -124,7 +124,7 @@ export default function Home({ setUser, user }) {
           </div>
         </div>
       </body>
-      {user ? <Redirect to="/explore" /> : null}
+      {user ? <Redirect to="/" /> : null}
     </React.Fragment>
   );
 }

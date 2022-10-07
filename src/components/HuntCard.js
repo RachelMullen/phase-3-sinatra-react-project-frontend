@@ -34,7 +34,7 @@ export default function HuntCard({ setUser, user, hunt, setCurrentGame, containe
           alert("No user found (and probably)");
         });
     } else if (container === "explore" && !user) {
-      alert("Please make an account to embark on a quest.");
+      alert("Please log in or make an account to embark on a quest.");
       setRedirect("home");
     }
   }
