@@ -40,7 +40,7 @@ export default function Login({ user, setUser }) {
           />
         </div>
         <div>
-          <input type="SUBMIT" />
+          <input type="SUBMIT" value="LOG IN" />
         </div>
       </form>
       <p>
@@ -58,7 +58,7 @@ export default function Login({ user, setUser }) {
     <React.Fragment>
       <body className="main-container">
       <div className="home">
-        <h1>SIGN IN</h1>
+        <h1>Hello!</h1>
         {renderForm}
         </div>
       </body>

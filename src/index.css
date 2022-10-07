@@ -257,6 +257,7 @@ footer {
   align-content: center;
   align-items: center;
   justify-content: space-evenly;
+  transform: scale(.8);
 }
 
 footer a {
@@ -271,6 +272,7 @@ header {
 
 .go-place-list {
   color: red;
+  ;
 }
 
 div {
@@ -364,12 +366,15 @@ div {
 }
 
 .go-selected-place-descrip {
-  color: blue;
+  color: rgb(0, 0, 0);
+  font-size: 2rem;
+  text-shadow: .3px .3px .3px rgba(0,0,0,0.3);
 }
 
 .comment-text {
   font-size: 1.1rem;
-  color:rgba(22, 41, 62, 0.3)
+  color:rgba(16, 27, 40, 0.3);
+  text-shadow: .3px .3px .3px rgba(0,0,0,0.3);
 }
 
 .go-page {
@@ -386,4 +391,18 @@ div {
 
 .create-entry {
   width: 20rem;
+}
+
+#time-to-explore {
+  margin-top: -.5rem;
+  color: rgb(81, 60, 186);
+  font-size: 2.2rem;
+
+}
+
+.place-text:hover {
+  cursor: pointer;
+  color: #6600ff;
+  transition: 500ms ease all;
+  transform: scale(1.1);
 }

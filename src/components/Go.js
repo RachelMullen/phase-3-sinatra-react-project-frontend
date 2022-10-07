@@ -50,6 +50,12 @@ export default function Go({ userHash, setUser, user, currentGame, setCurrentGam
     }
   }
 
+  function handleClose () {
+    if (currentGame) {
+      setIsSelecting(false);
+    }
+  }
+
   // RENDERING
   return (
     <div className="go-page">
@@ -67,7 +73,7 @@ export default function Go({ userHash, setUser, user, currentGame, setCurrentGam
           id="go-selector"
           className="pop"
           open={isSelecting}
-          onClose={() => setIsSelecting(false)}
+          onClose={handleClose}
         >
           <DialogTitle>Please Select An Active Quest:</DialogTitle>
           <HuntList
@@ -89,7 +95,7 @@ export default function Go({ userHash, setUser, user, currentGame, setCurrentGam
       ) : null}
 
       {isLoggedOut ? <Redirect to="/" /> : null}
-      {redirect == "explore" ? <Redirect to="/explore" /> : null}
+      {redirect == "explore" || user[2]["in_progress"].length < 1 ? <Redirect to="/explore" /> : null}
     </div>
   );
 }

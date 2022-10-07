@@ -51,10 +51,11 @@ export default function Dashboard({ user }) {
         <p>📍 - {user[0].locale}</p>
         <p>{user[0].bio}</p>
         <h1>Score: {user[3].stats.score}{user[3].stats.score > 0 ? ", nice." : ", you fucking idiot."}</h1>
+        <br />
+        <br />
         <button onClick={() => setIsEditing(true)}>EDIT PROFILE</button>
         {isEditing ?
         <div>
-        <h1>Edit Profile</h1>
         <form onSubmit={handleUpdate}>
           <input type="text" placeholder="Update your bio." value={userInput} onChange={(e) => setUserInput(e.target.value)}></input>
         </form>

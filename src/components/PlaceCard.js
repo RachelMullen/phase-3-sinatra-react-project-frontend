@@ -5,7 +5,7 @@ export default function PlaceCard({ place, setCurrentPlace }) {
 
     return (
         <div className="single-place">
-            <p onClick={() => setCurrentPlace(place)}>{place[0].place.name}</p>
+            <p className="place-text" onClick={() => setCurrentPlace(place)}>{place[0].place.name}</p>
         </div>
     )
 }

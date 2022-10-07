@@ -28,8 +28,10 @@ export default function PlaceList({ userHash, setUser, list, user }) {
 
     return (
         <div id="go-place-list">
-            <PlaceFull userHash={userHash} setUser={setUser} user={user} place={currentPlace}/>
+            <h2 id="time-to-explore" >Time to explore!</h2>
             {cards}
+            <p>-----------------</p>
+            <PlaceFull userHash={userHash} setUser={setUser} user={user} place={currentPlace}/>
         </div>
     )
 }

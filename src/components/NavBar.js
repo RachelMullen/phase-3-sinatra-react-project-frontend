@@ -29,7 +29,7 @@ export default function NavBar({ user }) {
           <img src={UpQuest} alt="Logo" height="100px" align-content="middle" padding-top="10px"/>
         </NavLink>
 
-        { user ?
+        { user && user[2]["in_progress"].length > 1 ?
         <li>
           <NavLink to="/go" className="navLink" activeStyle={{
             background: "#ff0057"}}>
