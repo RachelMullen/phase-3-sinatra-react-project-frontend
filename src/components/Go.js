@@ -27,17 +27,6 @@ export default function Go({ setUser, user, currentGame, setCurrentGame }) {
     lng: -104.9902,
   });
 
-  function setDefault() {
-    if (user) {
-      if (user[2]["in_progress"][0]) {
-        setCurrentGame(user[2]["in_progress"][0]);
-        console.log("we have a default game");
-      }
-    }
-  }
-
-  setDefault();
-
   useEffect(() => setPinArray(grabAllCoordinates()), [currentGame]);
 
   function grabAllCoordinates() {
