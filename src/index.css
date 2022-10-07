@@ -385,6 +385,7 @@ div {
   display: grid;
   grid-template-columns: 30rem 30rem;
   grid-template-rows: 10rem 10rem;
+  transform: scale(.9);
 }
 
 .author-text {
