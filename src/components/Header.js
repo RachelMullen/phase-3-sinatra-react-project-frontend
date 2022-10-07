@@ -11,7 +11,6 @@ export default function Header({ user }) {
         <br />
         <NavBar user={user} />
         <br />
-        <br />
         </header>
       </Container>
     </React.Fragment>

@@ -268,12 +268,6 @@ header {
   width: 100%;
   align-items: center;
 }
-/* 
-img {
-  display: block;
-  max-width: 50%;
-  height: auto;
-} */
 
 .go-place-list {
   color: red;
@@ -308,6 +302,20 @@ div {
   background-attachment: fixed;
   background-size: cover;
   display: flex;
+}
+
+.explore-background {
+  position: absolute;
+  top: -10%;
+  height: 100%;
+  width: 100%;
+  transform: scale(.6);
+  background-image: url(./assets/cloudburst.png);
+  z-index: -1;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 25%;
 }
 
 .home {

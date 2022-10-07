@@ -39,13 +39,13 @@ export default function HuntCard({ setUser, user, hunt, setCurrentGame, containe
     }
   }
 
-  console.log("here")
+  console.log("logging hunt")
   console.log(hunt)
 
   return (
     <div className="single-hunt">
       <p onClick={() => handleClick()}><span className="single-line-text">{name}</span></p>
-      <p className="author-text">by user {hunt[name].user_id}</p>
+      <p className="author-text">{container == "explore" ? `by user ${hunt[name].user_id}` : null }</p>
       {redirect === "go" ? <Redirect to="/go" /> : null}
       {redirect === "home" ? <Redirect to="/" /> : null}
     </div>

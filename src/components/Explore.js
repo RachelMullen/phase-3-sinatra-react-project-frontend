@@ -6,62 +6,68 @@ import Paper from "@mui/material/Paper";
 import PaperContent from "@mui/material/CardContent";
 import Container from "@mui/material/Container";
 import { Link } from "@mui/material";
-import Map from './Map';
-import HuntList from './HuntList';
+import Map from "./Map";
+import HuntList from "./HuntList";
 
 export default function Explore({ user, setUser, setCurrentGame }) {
-  const [ publicHunts, setPublicHunts ] = useState();
+  const [publicHunts, setPublicHunts] = useState();
 
   useEffect(() => {
-  fetch("http://localhost:9292/public")
-  .then(resp => resp.json())
-  .then(data => {
-    setPublicHunts(data);
-    console.log("public hunts:")
-    console.log(data);
-  });
-  },[]);
+    fetch("http://localhost:9292/public")
+      .then((resp) => resp.json())
+      .then((data) => {
+        setPublicHunts(data);
+        console.log("public hunts:");
+        console.log(data);
+      });
+  }, []);
 
   return (
     <React.Fragment>
-      <h1 id="choose-quest">Choose a Quest!</h1>
-      <br />
-      <HuntList setUser={setUser} setCurrentGame={setCurrentGame} user={user} container={"explore"} list={publicHunts}/>
-      <Map />
+      <div className="explore-background"></div>
+        <h1 id="choose-quest">Choose a Quest!</h1>
+        <br />
+        <HuntList
+          setUser={setUser}
+          setCurrentGame={setCurrentGame}
+          user={user}
+          container={"explore"}
+          list={publicHunts}
+        />
+        <Map />
 
-
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <Container sx={{ flexGrow: 1 }}>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        {/* <Container sx={{ flexGrow: 1 }}>
           <Grid2 xs={12} sm={6}>
             <Button variant="contained">EDIT/SAVE</Button>
           </Grid2>
-      </Container>
-      <div>
-        <br />
-        <Button variant="contained">PUBLISH & GO!</Button>
-      </div>
+        </Container>
+        <div>
+          <br />
+          <Button variant="contained">PUBLISH & GO!</Button>
+        </div> */}
     </React.Fragment>
   );
 }
