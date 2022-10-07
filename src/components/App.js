@@ -28,7 +28,7 @@ export default function App() {
       <Header user={user} />
       <Switch>
         <Route exact path="/create">
-          <Create />
+          <Create user={user}/>
         </Route>
         <Route exact path="/explore">
           <Explore setCurrentGame={setCurrentGame} user={user} setUser={setUser}/>

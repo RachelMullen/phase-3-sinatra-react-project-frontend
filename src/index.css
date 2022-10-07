@@ -383,3 +383,7 @@ div {
   color: rgb(202, 202, 202);
   margin-top: -.8rem;
 }
+
+.create-entry {
+  width: 20rem;
+}

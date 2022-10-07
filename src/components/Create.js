@@ -1,136 +1,63 @@
-import React, { useState } from "react";
-import Button from "@mui/material/Button";
-import Grid2 from "@mui/material/Unstable_Grid2";
-import Typography from "@mui/material/Typography";
-import Paper from "@mui/material/Paper";
-import PaperContent from "@mui/material/CardContent";
-import TextField from "@mui/material/TextField";
-import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import DialogTitle from "@mui/material/DialogTitle";
-// import Checkbox from "@mui/material/Checkbox";
-import Container from "@mui/material/Container";
-import { Link } from "@mui/material";
+import React, { useState, useEffect } from "react";
 
-export default function Create() {
-  const [open, setOpen] = useState(false);
+export default function Create({ user }) {
+  const [input, setInput] = useState(["","", false]);
+  const [series, setSeries] = useState(0);
+  const [hunt, setHunt] = useState();
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
+  console.log(user);
 
-  const handleClose = () => {
-    setOpen(false);
-  };
+  function createHunt(e) {
+    e.preventDefault();
+    let body = {
+      title: input[0],
+      locale: input[1],
+      public: input[2]
+    };
+    fetch(`http://localhost:9292/${user[0].id}/create`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    })
+    .then(resp => resp.json())
+    .then(data => {
+      setInput(["","", false])
+    })
+  }
+
   return (
-    <React.Fragment>
-      <div>
-        <Button variant="contained" onClick={handleClickOpen}>
-          CREATE A HUNT
-        </Button>
-        <Dialog open={open} onClose={handleClose}>
-          <DialogTitle>CREATE A HUNT</DialogTitle>
-          <DialogContent>
-            <DialogContentText>
-              Add the information below to create a new hunt.
-            </DialogContentText>
-            <TextField
-              autoFocus
-              margin="dense"
-              id="name"
-              label="name"
-              type="text"
-              fullWidth
-              variant="standard"
-            />
-            <TextField
-              autoFocus
-              margin="dense"
-              id="name"
-              label=" Location"
-              type="text"
-              fullWidth
-              variant="standard"
-            />
-            <TextField
-              autoFocus
-              margin="dense"
-              id="name"
-              label=" Desription"
-              type="text"
-              fullWidth
-              variant="standard"
-            />
-          </DialogContent>
-          <DialogActions>
-            <Button onClick={handleClose}>Create</Button>
-          </DialogActions>
-        </Dialog>
-      </div>
-
-      <Container sx={{ flexGrow: 1 }}>
-        <Grid2
-          container
-          spacing={{ xs: 3, md: 4 }}
-          columns={{ xs: 6, sm: 10, md: 14 }}
-        >
-          <Grid2 xs>
-            <Paper
-              elevation={3}
-              sx={{
-                textAlign: "left",
-                padding: "5px",
-                width: 300,
-                height: 300,
-                backgroundColor: "secondary.dark",
-                "&:hover": {
-                  backgroundColor: "secondary.main",
-                  opacity: [0.9, 0.8, 0.7],
-                },
-              }}
-            >
-              <PaperContent>
-                <Typography color="white" variant="h4">
-                  PLACES IN HUNT
-                </Typography>
-              </PaperContent>
-            </Paper>
-          </Grid2>
-          <Grid2 xs={12} sm={6}>
-            <Typography color="white" variant="h4" textAlign="center">
-              TITLE OF HUNT THIS IS WHERE THE PLACE DETAILS GO
-            </Typography>
-            <Button variant="contained">EDIT/SAVE</Button>
-          </Grid2>
-          <Grid2 xs>
-            <Paper
-              elevation={3}
-              sx={{
-                width: 300,
-                height: 300,
-                padding: "5px",
-                backgroundColor: "secondary.dark",
-                "&:hover": {
-                  backgroundColor: "secondary.main",
-                  opacity: [0.9, 0.8, 0.7],
-                },
-              }}
-            >
-              <PaperContent>
-                <Typography color="white" variant="h4" textAlign="Center">
-                  THIS IS A SMALLER MAP
-                </Typography>
-              </PaperContent>
-            </Paper>
-          </Grid2>
-        </Grid2>
-      </Container>
-      <div>
-        <br />
-        <Button variant="contained">PUBLISH & GO!</Button>
-      </div>
-    </React.Fragment>
+    <>
+      {series === 0 ? (
+        <form onSubmit={(e) => createHunt(e)}>
+          <br />
+          <input
+            className="create-entry"
+            type="text"
+            placeholder="What will you call this quest?"
+            onChange={(e) => setInput([e.target.value, input[1], input[2]])}
+            value={input[0]}
+          ></input>
+          <br />
+          <br />
+          <input
+            className="create-entry"
+            type="text"
+            placeholder="What is the locale?"
+            onChange={(e) => setInput([input[0], e.target.value, input[2]])}
+            value={input[1]}
+          ></input>
+          <br />
+          <br />
+          <br />
+          Will this quest be publicly available?{" "}
+          <input type="checkbox" onClick={() => setInput([input[0], input[1], !input[2]])} value={input[2]}/>
+          <br />
+          <br />
+          <input type="submit"></input>
+        </form>
+      ) : null}
+    </>
   );
 }
