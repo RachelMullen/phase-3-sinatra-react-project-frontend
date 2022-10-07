@@ -22,9 +22,9 @@ export default function NavBar({ user }) {
             EXPLORE
           </NavLink>
         </li>
-        <li>
+        <NavLink to="/">
           <img src={UpQuest} alt="Logo" height="100px" align-content="middle" padding-top="10px"/>
-        </li>
+          </NavLink>
         <li>
           <NavLink to="/go" className="navLink" activeStyle={{
             background: "#ff0057"}}>

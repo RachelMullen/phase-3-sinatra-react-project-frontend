@@ -1,15 +1,7 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 
-export default function HuntCard({
-  title,
-  setTitle,
-  setUser,
-  user,
-  hunt,
-  setCurrentGame,
-  container,
-}) {
+export default function HuntCard({ setUser, user, hunt, setCurrentGame, container }) {
   const [redirect, setRedirect] = useState("");
 
   let name = Object.keys(hunt);
@@ -20,9 +12,8 @@ export default function HuntCard({
   function handleClick() {
     if (container === "go") {
       console.log("click from go page");
+      // sets current game
       setCurrentGame(hunt);
-      setTitle(name);
-      console.log("setting title to " + name);
     } else if (container === "explore" && user) {
       console.log("click from explore page");
       fetch(`http://localhost:9292/${user[0].id}/${hunt[name].id}/start`)
@@ -31,27 +22,25 @@ export default function HuntCard({
           setCurrentGame(data);
           setRedirect("go");
         });
-
-      fetch(
-        `http://localhost:9292/users/${user[0].username}/${user[0].password}`
-      )
+        
+      fetch(`http://localhost:9292/users/${user[0].username}/${user[0].password}`)
         .then((resp) => resp.json())
         .then((data) => {
-          // console.log("refetching user")
+            // console.log("refetching user")
           setUser(data);
         })
         .catch(() => {
           alert("No user found (and probably)");
         });
     } else if (container === "explore" && !user) {
-      alert("Please log in to start a quest!");
+      alert("Please make an account and then begin this quest.");
       setRedirect("home");
     }
   }
 
   return (
     <div className="single-hunt">
-      <p onClick={() => handleClick()}>{Object.keys(hunt)}</p>
+      <p onClick={() => handleClick()}><span className="single-line-text">{Object.keys(hunt)}</span></p>
       {redirect === "go" ? <Redirect to="/go" /> : null}
       {redirect === "home" ? <Redirect to="/" /> : null}
     </div>

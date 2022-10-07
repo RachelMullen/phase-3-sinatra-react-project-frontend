@@ -3,7 +3,7 @@ import PlaceCard from "./PlaceCard";
 import { v4 as uuid } from "uuid";
 import PlaceFull from "./PlaceFull";
 
-export default function PlaceList({ list, user }) {
+export default function PlaceList({ setUser, list, user }) {
   let cards = [];
   let name = Object.keys(list);
 
@@ -26,9 +26,9 @@ export default function PlaceList({ list, user }) {
   generateList();
 
   return (
-    <div className="go-place-list">
+    <div id="go-place-list">
       {cards}
-      <PlaceFull user={user} place={currentPlace} />
+      <PlaceFull setUser={setUser} user={user} place={currentPlace} />
     </div>
   );
 }
