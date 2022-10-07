@@ -19,8 +19,8 @@ export default function HuntList({
         return (
           <div id="hunt-selector-list" key={uuid()}>
             <HuntCard
-              title={title}
-              setTitle={setTitle}
+              // title={title}
+              // setTitle={setTitle}
               setUser={setUser}
               user={user}
               container={container}

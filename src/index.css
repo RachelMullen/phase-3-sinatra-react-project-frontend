@@ -275,7 +275,7 @@ img {
   position: relative;
   display: flex;
   backdrop-filter: blur(20px);
-  background: #6600FF;
+  background: #6600ff;
   color: white;
   padding: 15px;
   /* margin-left: 20px; */
@@ -284,13 +284,14 @@ img {
   border-radius: 10px;
   width: 100%;
   max-width: 30rem;
-  box-shadow: 0 4px 8px rgb(10 22 70 / 15%);}
+  box-shadow: 0 4px 8px rgb(10 22 70 / 15%);
+}
 
-  .single-place-list:hover {
-    cursor: pointer;
-    color:#F9E830;
-        transition: 500ms ease all;
-  }
+.single-place-list:hover {
+  cursor: pointer;
+  color: #f9e830;
+  transition: 500ms ease all;
+}
 
 div {
   display: block;

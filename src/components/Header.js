@@ -6,7 +6,7 @@ export default function Header({ user }) {
     <React.Fragment>
       <header>
         <NavBar user={user} />
-        </header>
+      </header>
     </React.Fragment>
   );
 }

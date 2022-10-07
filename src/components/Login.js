@@ -14,7 +14,7 @@ export default function Login({ user, setUser }) {
         setUserInput(["", ""]);
       })
       .catch((error) => {
-        alert("No user found (and probably)")
+        alert("No user found (and probably)");
         setUserInput(["", ""]);
       });
   }
@@ -48,8 +48,8 @@ export default function Login({ user, setUser }) {
 
   return (
     <React.Fragment>
-            <body className="main-container">
-        <div className="home"> 
+      <body className="main-container">
+        <div className="home">
           <h1>SIGN IN</h1>
           {renderForm}
         </div>

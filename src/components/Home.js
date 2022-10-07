@@ -51,7 +51,7 @@ export default function Home({ setUser, user }) {
 
   return (
     <React.Fragment>
-            <body className="main-container">
+      <body className="main-container">
         <div className="home">
           <h1>Welcome trackies*.</h1>
           <p>
@@ -60,9 +60,7 @@ export default function Home({ setUser, user }) {
             collections, and track your gallops all in one spot.
           </p>
           <p>
-          <ExploreOutlinedIcon
-              sx={{ fontSize: "large" }}
-            />
+            <ExploreOutlinedIcon sx={{ fontSize: "large" }} />
           </p>
           <div>
             <button className="medium-button" onClick={handleClickOpen}>
@@ -124,8 +122,8 @@ export default function Home({ setUser, user }) {
                 <a href="http://localhost:3000/login">Log In.</a>
               </strong>
             </p>
+          </div>
         </div>
-      </div>
       </body>
       {user ? <Redirect to="/explore" /> : null}
     </React.Fragment>

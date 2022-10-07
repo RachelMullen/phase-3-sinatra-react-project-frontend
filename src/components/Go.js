@@ -12,30 +12,27 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import DialogActions from "@mui/material/DialogActions";
 import TextField from "@mui/material/TextField";
-import Squirtle from '../assets/squirtle.png';
-import Map from './Map';
-import PlaceList from './PlaceList';
-import HuntList from './HuntList';
-
+import Squirtle from "../assets/squirtle.png";
+import Map from "./Map";
+import PlaceList from "./PlaceList";
+import HuntList from "./HuntList";
 
 export default function Go({ setUser, user, currentGame, setCurrentGame }) {
-  const [isLoggedOut, setisLoggedOut] = useState(false)
-  const [redirect, setRedirect] = useState("")
-  const [isSelecting, setIsSelecting] = useState(true)
+  const [isLoggedOut, setisLoggedOut] = useState(false);
+  const [redirect, setRedirect] = useState("");
+  const [isSelecting, setIsSelecting] = useState(true);
   const [pinArray, setPinArray] = useState([]);
   const [center, setCenter] = useState({
     lat: 39.7392,
     lng: -104.9902,
   });
 
-
-
   useEffect(() => setPinArray(grabAllCoordinates()), [currentGame]);
 
   function grabAllCoordinates() {
     if (currentGame) {
-      console.log("attempting to parse list of places")
-      console.log(currentGame)
+      console.log("attempting to parse list of places");
+      console.log(currentGame);
       let staging = [];
       let centerMath = [0, 0];
       let name = Object.keys(currentGame);
@@ -55,7 +52,7 @@ export default function Go({ setUser, user, currentGame, setCurrentGame }) {
       centerMath[1] = centerMath[1] / currentGame[name].length;
       setCenter({
         lat: centerMath[0],
-        lng: centerMath[1]
+        lng: centerMath[1],
       });
       return staging;
     }
@@ -72,18 +69,26 @@ export default function Go({ setUser, user, currentGame, setCurrentGame }) {
       </Dialog>
 
       {/* pop-up choose game */}
-      {user ?
+      {user ? (
         <Dialog open={isSelecting} onClose={() => setIsSelecting(false)}>
           <DialogTitle>Please Select An Active Quest:</DialogTitle>
-          <HuntList container={"go"} list={user[2]["in_progress"]} setCurrentGame={setCurrentGame} />
+          <HuntList
+            container={"go"}
+            list={user[2]["in_progress"]}
+            setCurrentGame={setCurrentGame}
+          />
           <Button onClick={() => setIsSelecting(false)}>Go!</Button>
         </Dialog>
-        :
+      ) : (
         <Redirect to="/" />
-      }
+      )}
 
-      {currentGame ? <PlaceList setUser={setUser} user={user} list={currentGame} /> : null}
-      {currentGame ? <Map center={center} pinArray={pinArray} list={currentGame} /> : null}
+      {currentGame ? (
+        <PlaceList setUser={setUser} user={user} list={currentGame} />
+      ) : null}
+      {currentGame ? (
+        <Map center={center} pinArray={pinArray} list={currentGame} />
+      ) : null}
 
       <div class="flexContainer">
         <div class="row">

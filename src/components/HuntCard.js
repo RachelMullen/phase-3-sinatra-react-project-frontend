@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 
-export default function HuntCard({ setUser, user, hunt, setCurrentGame, container }) {
+export default function HuntCard({
+  setUser,
+  user,
+  hunt,
+  setCurrentGame,
+  container,
+}) {
   const [redirect, setRedirect] = useState("");
 
   let name = Object.keys(hunt);
@@ -22,11 +28,13 @@ export default function HuntCard({ setUser, user, hunt, setCurrentGame, containe
           setCurrentGame(data);
           setRedirect("go");
         });
-        
-      fetch(`http://localhost:9292/users/${user[0].username}/${user[0].password}`)
+
+      fetch(
+        `http://localhost:9292/users/${user[0].username}/${user[0].password}`
+      )
         .then((resp) => resp.json())
         .then((data) => {
-            // console.log("refetching user")
+          // console.log("refetching user")
           setUser(data);
         })
         .catch(() => {
@@ -40,7 +48,9 @@ export default function HuntCard({ setUser, user, hunt, setCurrentGame, containe
 
   return (
     <div className="single-hunt">
-      <p onClick={() => handleClick()}><span className="single-line-text">{Object.keys(hunt)}</span></p>
+      <p onClick={() => handleClick()}>
+        <span className="single-line-text">{Object.keys(hunt)}</span>
+      </p>
       {redirect === "go" ? <Redirect to="/go" /> : null}
       {redirect === "home" ? <Redirect to="/" /> : null}
     </div>

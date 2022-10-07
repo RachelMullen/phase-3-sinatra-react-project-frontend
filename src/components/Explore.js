@@ -6,27 +6,33 @@ import Paper from "@mui/material/Paper";
 import PaperContent from "@mui/material/CardContent";
 import Container from "@mui/material/Container";
 import { Link } from "@mui/material";
-import Map from './Map';
-import HuntList from './HuntList';
+import Map from "./Map";
+import HuntList from "./HuntList";
 
 export default function Explore({ user, setUser, setCurrentGame }) {
-  const [ publicHunts, setPublicHunts ] = useState();
+  const [publicHunts, setPublicHunts] = useState();
 
   useEffect(() => {
-  fetch("http://localhost:9292/public")
-  .then(resp => resp.json())
-  .then(data => {
-    setPublicHunts(data);
-    console.log("public hunts:")
-    console.log(data);
-  });
-  },[]);
+    fetch("http://localhost:9292/public")
+      .then((resp) => resp.json())
+      .then((data) => {
+        setPublicHunts(data);
+        console.log("public hunts:");
+        console.log(data);
+      });
+  }, []);
 
   return (
     <React.Fragment>
       <h1 id="choose-quest">CHOOSE A QUEST!</h1>
       <br />
-      <HuntList setUser={setUser} setCurrentGame={setCurrentGame} user={user} container={"explore"} list={publicHunts}/>
+      <HuntList
+        setUser={setUser}
+        setCurrentGame={setCurrentGame}
+        user={user}
+        container={"explore"}
+        list={publicHunts}
+      />
       <Map />
     </React.Fragment>
   );

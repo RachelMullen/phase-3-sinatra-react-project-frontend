@@ -8,10 +8,8 @@ import {
 import { v4 as uuid } from "uuid";
 
 export default function Map({ pinArray, center }) {
-
   // console.log("center is")
   // console.log(center)
-
 
   //THIS FUCKING STAYS HERE MATE. SHE DOESNT GO.
   function determineIcon(visit) {
@@ -42,33 +40,33 @@ export default function Map({ pinArray, center }) {
 
   return (
     <div id="mapContainer">
-      {pinArray ?
-      <LoadScript
-        id="map"
-        googleMapsApiKey="AIzaSyBU05O2xt-HlE4y5SUo0tHnCB0WcUi6Rk4"
-        mapId="d7d3b3829ba8148c"
-      >
-        <GoogleMap
-          // onClick={recenter}
-          mapContainerStyle={containerStyle}
-          zoom={10} //gotta come up with a formula for a dynamic zoom that adjusts every time a pin is placed
-          center={center}
-          options={settings}
+      {pinArray ? (
+        <LoadScript
+          id="map"
+          googleMapsApiKey="AIzaSyBU05O2xt-HlE4y5SUo0tHnCB0WcUi6Rk4"
+          mapId="d7d3b3829ba8148c"
         >
-          {pinArray.map((visit) => (
-            <Marker
-              id="marker"
-              key={uuid()}
-              position={{
-                lat: parseFloat(visit.latitude),
-                lng: parseFloat(visit.longitude),
-              }}
-              icon={determineIcon(visit)}
-            />
-          ))}
-        </GoogleMap>
-      </LoadScript>
-      : null}
+          <GoogleMap
+            // onClick={recenter}
+            mapContainerStyle={containerStyle}
+            zoom={10} //gotta come up with a formula for a dynamic zoom that adjusts every time a pin is placed
+            center={center}
+            options={settings}
+          >
+            {pinArray.map((visit) => (
+              <Marker
+                id="marker"
+                key={uuid()}
+                position={{
+                  lat: parseFloat(visit.latitude),
+                  lng: parseFloat(visit.longitude),
+                }}
+                icon={determineIcon(visit)}
+              />
+            ))}
+          </GoogleMap>
+        </LoadScript>
+      ) : null}
     </div>
   );
 }
