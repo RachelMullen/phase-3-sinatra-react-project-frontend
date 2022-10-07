@@ -43,7 +43,7 @@ export default function App() {
           <Home user={user} setUser={setUser} />
         </Route>
         <Route exact path="/dashboard">
-          <Dashboard user={user}/>
+          <Dashboard setUser={setUser} user={user}/>
         </Route>
       </Switch>
       <br />

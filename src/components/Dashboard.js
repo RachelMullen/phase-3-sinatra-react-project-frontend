@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import shred from '../assets/shred.gif'
 
-export default function Dashboard({ user }) {
+export default function Dashboard({ setUser, user }) {
   const [ isEditing, setIsEditing] = useState(false);
   const [ userInput, setUserInput] = useState("");
   const [ isDestroyed, setIsDestroyed] = useState(false);
@@ -41,6 +41,11 @@ export default function Dashboard({ user }) {
       .then((resp) => resp.json())
   }
 
+  function handleLogout () {
+    setLogout(true);
+    setUser(undefined);
+  }
+
   return (
     <React.Fragment>
       { series === 9 ? <img className="rotating" src={shred}></img> : null}
@@ -55,7 +60,7 @@ export default function Dashboard({ user }) {
         <br />
         <br />
         <button onClick={() => setIsEditing(!isEditing)}>EDIT PROFILE</button>
-        <button onClick={() => setLogout(true)}>LOG OUT</button>
+        <button onClick={handleLogout}>LOG OUT</button>
         {isEditing ?
         <div>
         <form onSubmit={handleUpdate}>
