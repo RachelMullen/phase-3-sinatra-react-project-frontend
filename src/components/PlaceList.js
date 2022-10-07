@@ -28,8 +28,8 @@ export default function PlaceList({ setUser, list, user }) {
 
     return (
         <div id="go-place-list">
-            {cards}
             <PlaceFull setUser={setUser} user={user} place={currentPlace}/>
+            {cards}
         </div>
     )
 }

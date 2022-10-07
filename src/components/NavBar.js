@@ -25,7 +25,7 @@ export default function NavBar({ user }) {
           </NavLink>
         </li>
         
-        <NavLink to={!user ? "/" : "/explore"}>
+        <NavLink to={!user ? "/" : "/go"}>
           <img src={UpQuest} alt="Logo" height="100px" align-content="middle" padding-top="10px"/>
         </NavLink>
 

@@ -60,7 +60,7 @@ export default function Go({ setUser, user, currentGame, setCurrentGame }) {
 
   // RENDERING
   return (
-    <>
+    <div className="go-page">
       {/* redirect sign in */}
       <Dialog open={!user} onClose={() => setisLoggedOut(true)}>
         <DialogTitle>Please Log In Or Make An Account</DialogTitle>
@@ -98,6 +98,6 @@ export default function Go({ setUser, user, currentGame, setCurrentGame }) {
 
       {isLoggedOut ? <Redirect to="/" /> : null}
       {redirect == "explore" ? <Redirect to="/explore" /> : null}
-    </>
+    </div>
   );
 }

@@ -238,7 +238,10 @@ button:hover {
 }
 
 #mapContainer {
+  display: flex;
   width: 70%;
+  position: absolute;
+  /* opacity: 60%; */
 }
 
 footer {
@@ -349,4 +352,20 @@ div {
   display: flex;
   position: absolute;
   top: 10%;
+}
+
+.go-selected-place-descrip {
+  color: blue;
+}
+
+.comment-text {
+  font-size: 1.1rem;
+  color:rgba(22, 41, 62, 0.3)
+}
+
+.go-page {
+  display: grid;
+  grid-template-columns: 25rem 25rem;
+  grid-template-rows: 10rem 10rem;
+  padding-left: 20rem;
 }

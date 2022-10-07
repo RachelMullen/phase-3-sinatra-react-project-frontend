@@ -31,8 +31,8 @@ export default function Map({ pinArray, center }) {
   // console.log(pinArray);
 
   const containerStyle = {
-    height: "90vh",
-    width: "60%",
+    height: "60vh",
+    width: "70%",
     left: "275px",
   };
   const settings = {
