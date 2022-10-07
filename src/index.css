@@ -299,22 +299,11 @@ div {
 .main-container {
   margin: 0;
   background-image: url(./assets/Map.png);
-  /* min-height: 100%; */
-  /* min-width: 1024px; */
-  /* position: fixed; */
   width: 100%;
   height: auto;
-  /* top: 0; */
-  /* left: 0; */
-  /* background-position: center center; */
-  /* background-repeat: no-repeat; */
   background-attachment: fixed;
-  /* opacity: 0.5; */
   background-size: cover;
-  /* position: relative; */
   display: flex;
-  /* align-items: center; */
-  /* justify-content: center; */
 }
 
 .home {
@@ -323,13 +312,19 @@ div {
   backdrop-filter: blur(20px);
   background: white;
   padding: 15px;
-  /* margin-left: 20px; */
   align-content: center;
-  /* margin-top: 50px; */
   border-radius: 10px;
   width: 100%;
   max-width: 30rem;
   box-shadow: 0 4px 8px rgb(10 22 70 / 15%);
+
+  /* elliots shitty css */
+  margin-bottom: 32rem;
+}
+
+#go-selector {
+  position: absolute;
+  top: -30%;
 }
 
 @media screen and (max-width: 1024px) {
@@ -348,4 +343,10 @@ div {
   .double-column {
     flex: 2;
   }
+}
+
+.pop {
+  display: flex;
+  position: absolute;
+  top: 10%;
 }
