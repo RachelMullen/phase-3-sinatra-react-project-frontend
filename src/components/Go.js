@@ -81,7 +81,7 @@ export default function Go({ userHash, setUser, user, currentGame, setCurrentGam
             list={user[2]["in_progress"]}
             setCurrentGame={setCurrentGame}
           />
-          <Button onClick={() => setIsSelecting(false)}>Go!</Button>
+          <Button onClick={currentGame ? () => setIsSelecting(false) : null}>Go!</Button>
         </Dialog>
       ) : (
         <Redirect to="/" />
