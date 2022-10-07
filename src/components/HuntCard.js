@@ -21,6 +21,7 @@ export default function HuntCard({ setUser, user, hunt, setCurrentGame, containe
         .then((data) => {
           setCurrentGame(data);
           setRedirect("go");
+          console.log("redirect state was just set to go");
         });
         
       fetch(`http://localhost:9292/users/${user[0].username}/${user[0].password}`)

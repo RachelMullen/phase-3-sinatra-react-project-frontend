@@ -19,8 +19,6 @@ export default function App() {
   return (
     <div>
       <Header user={user} />
-      <br />
-      <br />
       <Switch>
         <Route exact path="/create">
           <Create />
