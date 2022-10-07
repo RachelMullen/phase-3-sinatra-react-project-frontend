@@ -122,7 +122,7 @@ p {
   /* flex-basis: auto; */
   background: #6600ff;
   color: white;
-  box-shadow: 0 4px 8px rgb(10 22 70 / 15%);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px;
   padding: 12px;
   margin: 0 6px 6px 10px;
   border-radius: 10px;
@@ -397,7 +397,7 @@ div {
   margin-top: -.5rem;
   color: rgb(81, 60, 186);
   font-size: 2.2rem;
-
+  text-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px;
 }
 
 .place-text:hover {
@@ -407,6 +407,8 @@ div {
   transform: scale(1.1);
 }
 
-.footer-div {
-
+#visit-button {
+  background-color: #20c277;
+  /* text-shadow: black 3px 1px 0px; */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
