@@ -386,7 +386,7 @@ div {
 
 .author-text {
   font-size: 1rem;
-  color: rgb(202, 202, 202);
+  color: rgb(181, 179, 179);
   margin-top: -.8rem;
 }
 
@@ -406,6 +406,7 @@ div {
   color: #6600ff;
   transition: 500ms ease all;
   transform: scale(1.1);
+  text-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;
 }
 
 #visit-button {
