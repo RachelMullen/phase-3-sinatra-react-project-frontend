@@ -48,12 +48,12 @@ export default function Login({ user, setUser }) {
 
   return (
     <React.Fragment>
-      <div className="app">
-        <div>
-          <div className="title">SIGN IN</div>
+            <body className="main-container">
+        <div className="home"> 
+          <h1>SIGN IN</h1>
           {renderForm}
         </div>
-      </div>
+      </body>
       {user ? <Redirect to="/go" /> : null}
     </React.Fragment>
   );
