@@ -241,6 +241,7 @@ button:hover {
   display: flex;
   width: 70%;
   position: absolute;
+  z-index: -1;
   /* opacity: 60%; */
 }
 
