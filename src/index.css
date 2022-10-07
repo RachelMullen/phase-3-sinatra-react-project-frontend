@@ -142,9 +142,10 @@ p {
   /* align-content: center; */
   justify-content: space-evenly;
   align-items: center;
-  padding-bottom: 40px;
-  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-top: 0rem;
   transition: 500ms ease all;
+  transform: scale(.8);
 }
 
 /*  */
@@ -257,7 +258,7 @@ footer {
   align-content: center;
   align-items: center;
   justify-content: space-evenly;
-  transform: scale(.8);
+  transform: scale(.6);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
@@ -273,7 +274,7 @@ header {
 
 .go-place-list {
   color: red;
-  ;
+  transform: scale(.8);
 }
 
 div {
@@ -327,11 +328,13 @@ div {
   backdrop-filter: blur(20px);
   background: white;
   padding: 15px;
+  padding-top: 1rem;
   align-content: center;
   border-radius: 10px;
   width: 100%;
   max-width: 30rem;
-  box-shadow: 0 4px 8px rgb(10 22 70 / 15%);
+  box-shadow: 0 4px 8px rgb(10 22 70 / 38%);
+  transform: scale(.9);
 
   /* elliots shitty css */
   margin-bottom: 32rem;
