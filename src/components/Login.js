@@ -48,7 +48,7 @@ export default function Login({ user, setUser }) {
           Need to create an account?{" "}
           <br />
           <strong>
-            <a href="http://localhost:3000/login">Sign Up</a>
+            <a href="http://localhost:3000/">Sign Up</a>
           </strong>
         </p>
     </div>
