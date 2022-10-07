@@ -11,6 +11,7 @@ import ExploreOutlinedIcon from "@mui/icons-material/ExploreOutlined";
 export default function Home({ setUser, user }) {
   const [userInput, setUserInput] = useState(["", "", ""]);
   const [open, setOpen] = useState(false);
+  const [ isSigned, setIsSigned ] = useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -39,6 +40,7 @@ export default function Home({ setUser, user }) {
         .then((data) => {
           setUser(data);
           setUserInput(["", "", ""]);
+          setIsSigned(true);
         });
     } else if (userInput[1] !== userInput[2]) {
       alert("Please make sure passwords match!");
@@ -124,7 +126,7 @@ export default function Home({ setUser, user }) {
           </div>
         </div>
       </body>
-      {user ? <Redirect to="/" /> : null}
+      {isSigned ? <Redirect to="/explore" /> : null}
     </React.Fragment>
   );
 }
