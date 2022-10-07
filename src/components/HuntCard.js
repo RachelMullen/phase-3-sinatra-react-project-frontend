@@ -10,6 +10,8 @@ export default function HuntCard({ setUser, user, hunt, setCurrentGame, containe
   // console.log(hunt[name].id)
 
   function handleClick() {
+
+    // THIS IS WHAT HAPPENS FROM THE GO PAGE
     if (container === "go") {
       console.log("click from go page");
       // sets current game
@@ -33,6 +35,9 @@ export default function HuntCard({ setUser, user, hunt, setCurrentGame, containe
         .catch(() => {
           alert("No user found (and probably)");
         });
+
+
+        // THIS HAPPENS FROM THE EXPLORE PAGE
     } else if (container === "explore" && !user) {
       alert("Please log in or make an account to embark on a quest.");
       setRedirect("home");

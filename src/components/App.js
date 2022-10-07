@@ -15,6 +15,13 @@ import "../index.css";
 export default function App() {
   const [user, setUser ] = useState();
   const [ currentGame, setCurrentGame ] = useState();
+  const [ userHash, setUserHash ] = useState();
+
+  useEffect(() => {
+    fetch("http://localhost:9292/userhash")
+    .then(resp => resp.json())
+    .then(data => {setUserHash(data)});
+  }, []);
 
   return (
     <div>
@@ -27,7 +34,7 @@ export default function App() {
           <Explore setCurrentGame={setCurrentGame} user={user} setUser={setUser}/>
         </Route>
         <Route exact path="/go">
-          <Go setUser={setUser} user={user} setCurrentGame={setCurrentGame} currentGame={currentGame} />
+          <Go userHash={userHash} setUser={setUser} user={user} setCurrentGame={setCurrentGame} currentGame={currentGame} />
         </Route>
         <Route exact path="/login">
           <Login user={user} setUser={setUser} />

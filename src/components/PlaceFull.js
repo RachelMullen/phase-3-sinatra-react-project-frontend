@@ -3,14 +3,14 @@ import { v4 as uuid } from "uuid";
 import Comment from "./Comment";
 
 
-export default function PlaceFull({ place, user }) {
+export default function PlaceFull({ userHash, place, user }) {
 const [ isVisited, setIsVisited ] = useState(place[1].linked_visit[0].complete)
 
     const comments = place[0].comments.map(comment => {
 
         return (
             <div id="comment-list" key={uuid()}>
-                <Comment comment={comment}/>
+                <Comment userHash={userHash} comment={comment}/>
             </div>
         )
     })

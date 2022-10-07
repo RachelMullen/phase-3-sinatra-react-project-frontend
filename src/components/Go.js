@@ -17,7 +17,7 @@ import Map from "./Map";
 import PlaceList from "./PlaceList";
 import HuntList from "./HuntList";
 
-export default function Go({ setUser, user, currentGame, setCurrentGame }) {
+export default function Go({ userHash, setUser, user, currentGame, setCurrentGame }) {
   const [isLoggedOut, setisLoggedOut] = useState(false);
   const [redirect, setRedirect] = useState("");
   const [isSelecting, setIsSelecting] = useState(true);
@@ -90,7 +90,7 @@ export default function Go({ setUser, user, currentGame, setCurrentGame }) {
       )}
 
       {currentGame ? (
-        <PlaceList setUser={setUser} user={user} list={currentGame} />
+        <PlaceList userHash={userHash} setUser={setUser} user={user} list={currentGame} />
       ) : null}
       {currentGame ? (
         <Map center={center} pinArray={pinArray} list={currentGame} />
