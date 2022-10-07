@@ -112,8 +112,8 @@ p {
   justify-content: space-evenly;
 }
 
-#single-place {
-  background-color: white;
+.single-place {
+  transform: scale(.95);
 }
 
 .navLink {
