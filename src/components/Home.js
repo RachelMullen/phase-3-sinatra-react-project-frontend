@@ -119,6 +119,7 @@ export default function Home({ setUser, user }) {
           <div>
             <p>
               Already have an account?
+              <br />
               <strong>
                 <a href="http://localhost:3000/login">Log In.</a>
               </strong>
