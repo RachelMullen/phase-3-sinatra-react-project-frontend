@@ -38,7 +38,9 @@ const [ isVisited, setIsVisited ] = useState(place[1].linked_visit[0].complete)
     return (
         <>
             <h2 id="go-selected-place" style={{ fontSize: "2rem"}}>{place[0].place.name}</h2>
-            <button id="visit-button" style={{ color: "green"}} onClick={handleVisit}>{isVisited ? "VISITED" : "VISIT"}</button>
+            <button activeStyle={{backgroundColor: "#FF0057"}} onClick={handleVisit}>{isVisited ? "VISITED" : "VISIT"}</button>
+            
+            
             <p className="go-selected-place-descrip">{place[0].place.description}</p>
             {/* <p>latitude: {place[0].place.latitude}</p>
             <p>longitude: {place[0].place.latitude}</p> */}

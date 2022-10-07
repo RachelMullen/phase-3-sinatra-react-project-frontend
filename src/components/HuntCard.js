@@ -46,9 +46,9 @@ export default function HuntCard({ userHash, setUser, user, hunt, setCurrentGame
     }
   }
 
-  console.log("logging hunt")
-  console.log(hunt)
-  console.log(userHash)
+  // console.log("logging hunt")
+  // console.log(hunt)
+  // console.log(userHash)
 
   return (
     <div className="single-hunt">
