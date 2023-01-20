@@ -1,14 +1,6 @@
 # UPQUEST
 ![UpQuest](src/assets/UpQuest.png)
 
-## TABLE OF CONTENTS
-
-- [Function & Features] (#function-&-features)
-- [Demo/Visuals] (#demo-visuals)
-- [Tech Stack] (#tech-stack)
-- [Future Opportunities for Enhancement] (#future-opportunities-for-enhancement)
-- [Maintainers] (#maintainers)
-
 ## FUNCTION & FEATURES
 
 UpQuest is an app for anyone who wants to create a one-stop shop organize their experiences. Save your favorite places, explore location collections, and <strong>track</strong> your progress all in one spot. 
