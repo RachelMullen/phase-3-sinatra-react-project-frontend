@@ -1,4 +1,5 @@
 # UPQUEST
+![UpQuest](src/assets/UpQuest.png)
 
 ## TABLE OF CONTENTS
 
