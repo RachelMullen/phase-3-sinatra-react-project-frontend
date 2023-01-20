@@ -1,14 +1,16 @@
+#UPQUEST
+
 ## TABLE OF CONTENTS
 
-- Function & Features
-- Demo/Visuals
-- Technologies Used
-- Future Opportunities for Enhancement
-- Maintainers
+- [Function & Features] (#function-&-features)
+- [Demo/Visuals] (#demo-visuals)
+- [Tech Stack] (#tech-stack)
+- [Future Opportunities for Enhancement] (#future-opportunities-for-enhancement)
+- [Maintainers] (#maintainers)
 
 ## FUNCTION & FEATURES
 
-TBD NAME OF PROJECT is an app for anyone who wants to create a one-stop shop organize their experiences. Save your favorite places, explore location collections, and <strong>track</strong> your progress all in one spot. 
+UpQuest is an app for anyone who wants to create a one-stop shop organize their experiences. Save your favorite places, explore location collections, and <strong>track</strong> your progress all in one spot. 
 
 Leveraging Google Map’s API, users can:
 - Login and create an account.
@@ -17,29 +19,27 @@ Leveraging Google Map’s API, users can:
 - Indicate if they have visited a place or not.
 - View their progress in completing all of the experiences in a collection.
 - View collections of places created by other users.
-- (Future) Share collections with other users.
 
 ### Frontend
 
-This is the frontend of TBD NAME OF PROJECT. To checkout the backend, visit [this repo](https://github.com/RachelMullen/phase-3-sinatra-react-project-backend/).
+This is the frontend of UpQuest. To checkout the backend, visit [this repo](https://github.com/RachelMullen/phase-3-sinatra-react-project-backend/).
 
 ## DEMO/VISUALS
 COMING SOON!
 
-## TECHNOLOGIES USED
+## TECH STACK
 This project was built using:
 
 - React
 - Ruby
 - Sinatra
-- API: 
+- API: Google Maps
+
 ## FUTURE OPPORTUNITIES FOR ENHANCEMENT
 
-COMING SOON!
+In the future, we would love to build in something that allows users to filter costs of experiences, as well as the capability to share collections with other users.
 
-In the future, we would love to build in something that allows users to filter costs of experiences.
-
-## MAINTAINERS
+## MAINTAINERS 
 
 - Luke Chamley: https://www.linkedin.com/in/luke-chamley/ 
 - Elliot Mangini: https://www.linkedin.com/in/elliotmangini/ 
