@@ -20,7 +20,7 @@ Leveraging Google Map’s API, users can:
 - View their progress in completing all of the experiences in a collection.
 - View collections of places created by other users.
 
-### Frontend
+### Backend
 
 This is the frontend of UpQuest. To checkout the backend, visit [this repo](https://github.com/RachelMullen/phase-3-sinatra-react-project-backend/).
 
